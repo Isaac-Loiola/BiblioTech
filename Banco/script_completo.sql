@@ -52,6 +52,40 @@ data_mov datetime default current_timestamp,
 foreign key(id_livro) references livros(id)
 );
 
+create table livros(
+id int auto_increment,
+nome varchar(120),
+id_autor int,
+id_editora int,
+descricao text,
+dimensao varchar(7),
+id_genero int,
+data_pub datetime,
+imagem blob,
+primary key(id),
+foreign key(id_autor) references autores(id),
+foreign key(id_editora) references editoras(id),
+foreign key(id_genero) references generos(id)
+);
+
+create table avaliacao_livro(
+id_livro int, 
+nivel tinyint(5),
+foreign key(id_livro) references livros(id)
+);
+
+create table reservas(
+id int auto_increment,
+id_usuario int, 
+id_livro int,
+data_reserva datetime default current_timestamp,
+data_devolucao datetime,
+status enum('aberto', 'finalizado'),
+primary key(id),
+foreign key(id_usuario) references usuarios(id),
+foreign key(id_livro) references usuarios(id)
+);
+
 delimiter $$
 create trigger tr_atualizar_estoque
 after insert on controle_estoque
