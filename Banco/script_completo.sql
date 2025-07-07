@@ -13,6 +13,13 @@ status bit(1) default 1,
 primary key(id)
 );
 
+
+create table penalidades(
+id_usuario int auto_increment,
+tipo enum('banido', 'suspenso'),
+foreign key(id_usuario) references usuarios(id)
+);
+
 create table enderecos(	
 id int auto_increment,
 id_usuario int, 
