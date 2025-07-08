@@ -5,18 +5,22 @@ use bibliotech;
 
 create table usuarios (
 id int auto_increment,
-nome varchar(40) not null,
-email varchar(60) not null,
+nome varchar(50) not null,
+email varchar(70) not null,
 senha varchar(32) not null,
 data_nascimento datetime not null,
 status bit(1) default 1,
 primary key(id)
 );
 
-
 create table penalidades(
-id_usuario int auto_increment,
+id int auto_increment,
+id_usuario int ,
 tipo enum('banido', 'suspenso'),
+status enum('fechada', 'aberta') default 'aberta',
+data_inicio datetime default current_timestamp,
+data_fim datetime,
+primary key(id),
 foreign key(id_usuario) references usuarios(id)
 );
 
@@ -116,4 +120,76 @@ begin
         where id_livro = new.id_livro;
         
 	end if;
+end$$
+
+delimiter $$
+create procedure sp_usuarios_insert(
+	spnome varchar(50),
+    spemail varchar(70),
+    spsenha varchar(32),
+    spdata_nascimento datetime
+)
+begin
+	insert usuarios
+    values(0, spnome, spemail, spsenha, spdata_nascimento, default);
+    select last_insert_id();
+end$$
+
+
+delimiter $$
+create procedure sp_usuarios_status(
+	spid int,
+	spstatus bit(1)
+)
+begin
+	update usuarios
+    set status = spstatus
+    where id = spid;
+end$$
+
+
+delimiter $$
+create procedure sp_usuarios_update(
+	spid int,
+    spsenha varchar(32)
+)
+begin
+	update usuarios
+    set senha = spsenha
+    where id = spid;
+end$$
+
+delimiter $$
+create procedure sp_penalidades_insert(
+	spid_usuario int,
+    sptipo enum('banido', 'suspenso')
+)
+begin
+	insert penalidades(id_usuario, tipo, status, data_inicio)
+	values(spid_usuario, sptipo, default, default);
+    select last_insert_id();
+end$$
+
+
+delimiter $$
+create procedure sp_penalidades_update(
+	spid int,
+    spstatus enum('fechada', 'aberta'),
+    spdata_fim datetime
+)
+begin
+	update penalidades
+    set status = 'fechada',
+    data_fim = current_timestamp
+    where id = spid;
+end$$
+
+delimiter $$
+create procedure sp_log_usuario_insert(
+    spid_usuario int,
+	spatividade bit(1)
+)
+begin
+	insert log_usuarios
+    values(0, spid_usuario, default, spatividade);
 end$$
