@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,6 +14,11 @@ namespace BiblioTechClass
         public DateTime DataNascimennto { get; set; }
         public string Pais { get; set; }
         public string Cidade { get; set; }
+
+        public Autor()
+        {
+
+        }
 
         public Autor(int id, string nome, DateTime dataNascimennto, string pais, string cidade)
         {
@@ -44,5 +50,28 @@ namespace BiblioTechClass
 
             Id = Convert.ToInt32(cmd.ExecuteScalar());
         }
+
+        public Autor ObterPorId(int id)
+        {
+            Autor autor = new();
+
+            var cmd = Banco.Abrir();
+            cmd.CommandText = $"select * from autores where id = {id}";
+            var dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                autor = new
+                    (
+                        dr.GetInt32(0),
+                        dr.GetString(1),
+                        dr.GetDateTime(2),
+                        dr.GetString(3),
+                        dr.GetString(4)
+                    );   
+            }
+
+            return autor;
+        }
+
     }
 }
