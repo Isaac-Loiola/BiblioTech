@@ -69,9 +69,37 @@ namespace BiblioTechClass
                         dr.GetString(4)
                     );   
             }
+            cmd.Connection.Close();
 
             return autor;
         }
 
+        public List<Autor> ObterLista()
+        {
+            List<Autor> autores = new();
+
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "select * from autores";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                autores.Add
+                    (
+                        new
+                        (
+                            dr.GetInt32(0),
+                            dr.GetString(1),
+                            dr.GetDateTime(2),
+                            dr.GetString(3),
+                            dr.GetString(4)
+                        )
+                    );
+                    
+            }
+            dr.Close();
+            cmd.Connection.Close();
+            
+            return autores;
+        }
     }
 }
