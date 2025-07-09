@@ -105,8 +105,10 @@ foreign key(id_genero) references generos(id)
 );
 
 create table avaliacao_livro(
+id int auto_increment,
 id_livro int, 
 nivel tinyint(5),
+primary key(id),
 foreign key(id_livro) references livros(id)
 );
 
@@ -284,6 +286,7 @@ create procedure sp_controle_estoque_insert(
 begin
 	insert controle_estoque
     values(0, spid_livro, spmovimento, spquantidade, default);
+    select  last_insert_id();
 end$$
 
 delimiter $$
@@ -293,7 +296,7 @@ create procedure sp_avaliacao_livro(
 )
 begin
 	insert avaliacao_livro 
-    values(spid_livro, spnivel);
+    values(0, spid_livro, spnivel);
 end $$
 
 delimiter $$
