@@ -83,7 +83,7 @@ namespace BiblioTechClass
         public void ObterAvaliacoesTotais(int id_livro)
         {
             var cmd = Banco.Abrir();
-            cmd.CommandText = $"select count(nivel) from avaliacao_livro;";
+            cmd.CommandText = $"select count(nivel), count(id) from avaliacao_livro;";
             var dr = cmd.ExecuteReader();
             if (dr.Read())
             {
