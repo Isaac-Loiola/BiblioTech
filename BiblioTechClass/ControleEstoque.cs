@@ -55,7 +55,7 @@ namespace BiblioTechClass
         /// Lista todos os movimentos da tabela controle de estoque
         /// </summary>
         /// <returns>lista ControleEstoque</returns>
-        public List<ControleEstoque> ObterLista()
+        public static List<ControleEstoque> ObterLista()
         {
             List<ControleEstoque> controle = new();
             var cmd = Banco.Abrir();
@@ -79,6 +79,35 @@ namespace BiblioTechClass
             cmd.Connection.Close();
 
             return controle;
+        }
+
+
+        /// <summary>
+        /// Método para obter uma movimentação expecifica
+        /// </summary>
+        /// <param name="id">id da movimentação</param>
+        /// <returns>Objeto ControleEstoque</returns>
+        public static ControleEstoque ObterPorId(int id)
+        {
+            ControleEstoque movimentacao = new();
+            var cmd = Banco.Abrir();
+            cmd.CommandText = $"select * from sp_controle_estoque where id = {id}";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                movimentacao = new
+                    (
+                        dr.GetInt32(0),
+                        Livro.ObterPorId(dr.GetInt32(1)),
+                        dr.GetString(2),
+                        dr.GetInt32(3),
+                        dr.GetDateTime(4)
+                    );
+            }
+            dr.Close();
+            cmd.Connection.Close();
+
+            return movimentacao ;
         }
     }
 }
