@@ -80,5 +80,33 @@ namespace BiblioTechClass
 
             return editoras;
         }
+
+
+        /// <summary>
+        /// Método para obter um objeto Editora por um id
+        /// </summary>
+        /// <param name="id"> id da editora</param>
+        /// <returns>Objeto Editora</returns>
+        public Editora ObterPorId(int id)
+        {
+            Editora editora = new();
+
+            var cmd = Banco.Abrir();
+            cmd.CommandText = $"select * from editoras where id = {id}";
+            var dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                editora = new
+                    (
+                        dr.GetInt32(0),
+                        dr.GetString(1),
+                        dr.GetString(2),
+                        dr.GetDateTime(3)
+                    );
+            }
+            cmd.Connection.Close();
+            
+            return editora;
+        }
     }
 }
