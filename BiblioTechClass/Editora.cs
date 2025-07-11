@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -48,6 +49,36 @@ namespace BiblioTechClass
 
             Id = Convert.ToInt32(cmd.ExecuteScalar());
             cmd.Connection.Close();
+        }
+
+        /// <summary>
+        /// Método para obter lista de todas editoras
+        /// </summary>
+        /// <returns>lista do tipo Editora</returns>
+        public List<Editora> ObterLista()
+        {
+            List<Editora> editoras = new();
+
+            var cmd = Banco.Abrir();
+            cmd.CommandText = "select * from editoras";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                editoras.Add
+                    (
+                        new
+                        (
+                            dr.GetInt32(0),
+                            dr.GetString(1),
+                            dr.GetString(2),
+                            dr.GetDateTime(3)
+                        )
+                    );
+            }
+            dr.Close();
+            cmd.Connection.Close();
+
+            return editoras;
         }
     }
 }
