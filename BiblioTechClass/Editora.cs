@@ -33,6 +33,21 @@ namespace BiblioTechClass
             DataCriacao = dataCriacao;
         }
 
+        /// <summary>
+        /// Método para adicionar uma editora no banco de dados@
+        /// </summary>
+        public void Adicionar()
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "sp_editores_insert";
 
+            cmd.Parameters.AddWithValue("spnome", Nome);
+            cmd.Parameters.AddWithValue("sppais", Pais);
+            cmd.Parameters.AddWithValue("spdata_criacao", DataCriacao);
+
+            Id = Convert.ToInt32(cmd.ExecuteScalar());
+            cmd.Connection.Close();
+        }
     }
 }
