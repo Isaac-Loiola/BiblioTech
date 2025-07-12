@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -50,6 +51,60 @@ namespace BiblioTechClass
             Uf = uf;
             Tipo = tipo;
         }
+        
+        /// <summary>
+        /// Método para adicionar um endereco ao banco de dados
+        /// </summary>
+        public void Adicionar()
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "sp_enderecos_insert";
+            cmd.Parameters.AddWithValue("spid_usuario", Usuario.Id);
+            cmd.Parameters.AddWithValue("spcep", Cep);
+            cmd.Parameters.AddWithValue("splogradouro", Logradouro);
+            cmd.Parameters.AddWithValue("spnumero", Numero);
+            cmd.Parameters.AddWithValue("spcomplemento", Complemento);
+            cmd.Parameters.AddWithValue("spbairro", Bairro);
+            cmd.Parameters.AddWithValue("spcidade", Cidade);
+            cmd.Parameters.AddWithValue("spuf", Uf);
+            cmd.Parameters.AddWithValue("sptipo", Tipo);
 
+            Id = Convert.ToInt32(cmd.ExecuteScalar());
+            cmd.Connection.Close();
+        }
+
+        /// <summary>
+        /// Método para obter um endereco de um usuario expecifico!
+        /// </summary>
+        /// <param name="idUsuario">id do usuario</param>
+        /// <returns>Objeto Endereco</returns>
+        public static Endereco ObterPorId(int idUsuario)
+        {
+            Endereco endereco = new();
+
+            var cmd = Banco.Abrir();
+            cmd.CommandText = $"select * from enderecos where id_usuario = {idUsuario}";
+            var dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                endereco = new
+                    (
+                        dr.GetInt32(0),
+                        Usuario.ObterPorId(dr.GetInt32(1)),
+                        dr.GetString(2),
+                        dr.GetString(3),
+                        dr.GetString(4),
+                        dr.GetString(5),
+                        dr.GetString(6),
+                        dr.GetString(7),
+                        dr.GetString(8),
+                        dr.GetString(9)
+                    );    
+            }
+            cmd.Connection.Close();
+
+            return endereco;
+        }
     }
 }
