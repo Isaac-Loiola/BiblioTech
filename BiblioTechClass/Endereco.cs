@@ -73,5 +73,38 @@ namespace BiblioTechClass
             Id = Convert.ToInt32(cmd.ExecuteScalar());
             cmd.Connection.Close();
         }
+
+        /// <summary>
+        /// Método para obter um endereco de um usuario expecifico!
+        /// </summary>
+        /// <param name="idUsuario">id do usuario</param>
+        /// <returns>Objeto Endereco</returns>
+        public static Endereco ObterPorId(int idUsuario)
+        {
+            Endereco endereco = new();
+
+            var cmd = Banco.Abrir();
+            cmd.CommandText = $"select * from enderecos where id_usuario = {idUsuario}";
+            var dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                endereco = new
+                    (
+                        dr.GetInt32(0),
+                        Usuario.ObterPorId(dr.GetInt32(1)),
+                        dr.GetString(2),
+                        dr.GetString(3),
+                        dr.GetString(4),
+                        dr.GetString(5),
+                        dr.GetString(6),
+                        dr.GetString(7),
+                        dr.GetString(8),
+                        dr.GetString(9)
+                    );    
+            }
+            cmd.Connection.Close();
+
+            return endereco;
+        }
     }
 }
