@@ -52,6 +52,9 @@ namespace BiblioTechClass
             Tipo = tipo;
         }
         
+        /// <summary>
+        /// Método para adicionar um endereco ao banco de dados
+        /// </summary>
         public void Adicionar()
         {
             var cmd = Banco.Abrir();
