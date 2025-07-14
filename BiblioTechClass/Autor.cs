@@ -51,7 +51,7 @@ namespace BiblioTechClass
             Id = Convert.ToInt32(cmd.ExecuteScalar());
         }
 
-        public Autor ObterPorId(int id)
+        public static Autor ObterPorId(int id)
         {
             Autor autor = new();
 
