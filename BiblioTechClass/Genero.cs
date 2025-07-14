@@ -45,5 +45,25 @@ namespace BiblioTechClass
 
             return generos;
         }
+
+        public static Genero ObterPorId(int id)
+        {
+            Genero genero = new();
+            var cmd = Banco.Abrir();
+            cmd.CommandText = $"select * from generos where id = {id}";
+            var dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                genero = new
+                    (
+                        dr.GetInt32(0),
+                        dr.GetString(1)
+                    );
+            }
+            dr.Close();
+            cmd.Connection.Close();
+
+            return genero;
+        }
     }
 }

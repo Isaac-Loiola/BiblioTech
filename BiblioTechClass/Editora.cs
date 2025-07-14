@@ -87,7 +87,7 @@ namespace BiblioTechClass
         /// </summary>
         /// <param name="id"> id da editora</param>
         /// <returns>Objeto Editora</returns>
-        public Editora ObterPorId(int id)
+        public static Editora ObterPorId(int id)
         {
             Editora editora = new();
 
