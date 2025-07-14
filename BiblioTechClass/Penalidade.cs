@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -41,11 +42,33 @@ namespace BiblioTechClass
             Tipo = tipo;
         }
 
+
+        /// <summary>
+        /// Método para obter uma penalidade em aberto de um usuario expecifico
+        /// </summary>
+        /// <param name="idUsuario">id do usuario</param>
+        /// <returns>Objeto Penalidade</returns>
         public Penalidade ObterPorId(int idUsuario)
         {
             Penalidade penalidade = new();
 
-
+            var cmd = Banco.Abrir();
+            cmd.CommandText = $"select * from penalidades where id_usuario = {idUsuario} and status = 'aberta'";
+            var dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                penalidade = new
+                    (
+                        dr.GetInt32(0),
+                        Usuario.ObterPorId(dr.GetInt32(1)),
+                        dr.GetString(2),
+                        dr.GetString(3),
+                        dr.GetDateTime(4),
+                        dr.GetDateTime(5)
+                    );
+            }
+            dr.Close();
+            cmd.Connection.Close();
 
             return penalidade;
         }
