@@ -49,6 +49,28 @@ namespace BiblioTechClass
         }
 
         /// <summary>
+        /// Método para adiconar um livro ao banco de dados!
+        /// </summary>
+        public void Adicionar()
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "sp_livros_insert";
+            cmd.Parameters.AddWithValue("spnome", Nome);
+            cmd.Parameters.AddWithValue("spid_autor", Autor.Id);
+            cmd.Parameters.AddWithValue("spid_editora", Editora.Id);
+            cmd.Parameters.AddWithValue("spdescricao", Descricao);
+            cmd.Parameters.AddWithValue("spdimensao", Dimensao);
+            cmd.Parameters.AddWithValue("spid_genero", Genero.Id);  
+            cmd.Parameters.AddWithValue("spdata_pub", DataPublicacao);
+            cmd.Parameters.AddWithValue("spimagem", Imagem);
+
+            Id = Convert.ToInt32(cmd.ExecuteScalar());
+            cmd.Connection.Close();
+        }
+
+
+        /// <summary>
         /// Método para obter um objeto Usuario
         /// </summary>
         /// <param name="id">id do livro</param>
