@@ -36,7 +36,7 @@ namespace BiblioTechClass
             DataPublicacao = dataPublicacao;
             Imagem = imagem;
         }
-        public Livro( string nome, Autor autor, Editora editora, string descwricao, string dimensao, Genero genero, DateTime dataPublicacao, Stream imagem)
+        public Livro( string nome, Autor autor, Editora editora, string descricao, string dimensao, Genero genero, DateTime dataPublicacao, Stream imagem)
         {
             Nome = nome;
             Autor = autor;
@@ -48,6 +48,11 @@ namespace BiblioTechClass
             Imagem = imagem;
         }
 
+        /// <summary>
+        /// Método para obter um objeto Usuario
+        /// </summary>
+        /// <param name="id">id do livro</param>
+        /// <returns>Objeto Livro</returns>
         public static Livro ObterPorId(int id)
         {
             Livro livro = new();
@@ -74,6 +79,42 @@ namespace BiblioTechClass
             cmd.Connection.Close();
 
             return livro;
+        }
+
+        /// <summary>
+        /// Método para obter uma lista de todos os livros
+        /// </summary>
+        /// <returns>Lista de objeto Livro</returns>
+        public static List<Livro> ObterLista()
+        {
+            List<Livro> livros = new();
+
+            var cmd = Banco.Abrir();
+            cmd.CommandText = $"select * from livros";
+            var dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                livros.Add
+                    (
+                        new
+                        (
+                            dr.GetInt32(0),
+                            dr.GetString(1),
+                            Autor.ObterPorId(dr.GetInt32(2)),
+                            Editora.ObterPorId(dr.GetInt32(3)),
+                            dr.GetString(4),
+                            dr.GetString(5),
+                            Genero.ObterPorId(dr.GetInt32(6)),
+                            dr.GetDateTime(7),
+                            dr.GetStream(8)
+                        )
+                    );
+               
+            }
+            dr.Close();
+            cmd.Connection.Close();
+
+            return livros;
         }
     }
 }
