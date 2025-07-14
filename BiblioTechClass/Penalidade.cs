@@ -89,5 +89,34 @@ namespace BiblioTechClass
             Id = Convert.ToInt32(cmd.ExecuteScalar());
             cmd.Connection.Close();
         }
+
+        /// <summary>
+        /// Método para finalizar uma penalidade!
+        /// </summary>
+        public void Finalizar()
+        {
+            Penalidade penalidade = new();
+
+            var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "sp_penalidades_update";
+            cmd.Parameters.AddWithValue("spid", Id);
+
+            var dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                penalidade = new
+                    (
+                        Id = dr.GetInt32(0),
+                        Usuario = Usuario.ObterPorId(dr.GetInt32(1)),
+                        Tipo = dr.GetString(2),
+                        Status = dr.GetString(3),
+                        DataInicio = dr.GetDateTime(4),
+                        DataFim = dr.GetDateTime(5)
+                    );
+            }
+            dr.Close();
+            cmd.Connection.Close();
+        }
     }
 }
