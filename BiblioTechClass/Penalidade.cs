@@ -36,10 +36,11 @@ namespace BiblioTechClass
             Status = status;
             DataFim = dataFim;
         }
-        public Penalidade(Usuario usuario, string tipo)
+        public Penalidade(Usuario usuario, string tipo, DateTime datafim)
         {
             Usuario = usuario;
             Tipo = tipo;
+            DataFim = datafim;
         }
 
 
@@ -83,6 +84,7 @@ namespace BiblioTechClass
             cmd.CommandText = "sp_penalidades_insert";
             cmd.Parameters.AddWithValue("spid_usuario", Usuario.Id);
             cmd.Parameters.AddWithValue("sptipo", Tipo);
+            cmd.Parameters.AddWithValue("spdata_fim", DataFim);
 
             Id = Convert.ToInt32(cmd.ExecuteScalar());
             cmd.Connection.Close();
