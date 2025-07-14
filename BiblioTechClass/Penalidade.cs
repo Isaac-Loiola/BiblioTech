@@ -14,6 +14,11 @@ namespace BiblioTechClass
         public string Status { get; set; }
         public DateTime DataInicio { get; set; }
         public DateTime DataFim { get; set; }
+
+        public Penalidade()
+        {
+
+        }
         public Penalidade(int id, Usuario usuario, string tipo, string status, DateTime dataInicio, DateTime dataFim)
         {
             Id = id;
@@ -34,6 +39,30 @@ namespace BiblioTechClass
         {
             Usuario = usuario;
             Tipo = tipo;
+        }
+
+        public Penalidade ObterPorId(int idUsuario)
+        {
+            Penalidade penalidade = new();
+
+
+
+            return penalidade;
+        }
+
+        /// <summary>
+        /// Método para inserir uma penalidade para um usuario expecifico
+        /// </summary>
+        public void Inserir()
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "sp_penalidades_insert";
+            cmd.Parameters.AddWithValue("spid_usuario", Usuario.Id);
+            cmd.Parameters.AddWithValue("sptipo", Tipo);
+
+            Id = Convert.ToInt32(cmd.ExecuteScalar());
+            cmd.Connection.Close();
         }
     }
 }
