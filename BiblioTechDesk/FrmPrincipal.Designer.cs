@@ -45,6 +45,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             lblPessoal = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblDescubra = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -55,6 +57,7 @@
             btnMeusLivros = new Guna.UI2.WinForms.Guna2Button();
             btnInicio = new Guna.UI2.WinForms.Guna2Button();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            txtPesquisar = new Guna.UI2.WinForms.Guna2TextBox();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             SuspendLayout();
@@ -264,6 +267,30 @@
             guna2PictureBox1.TabIndex = 2;
             guna2PictureBox1.TabStop = false;
             // 
+            // txtPesquisar
+            // 
+            txtPesquisar.BorderRadius = 10;
+            txtPesquisar.CustomizableEdges = customizableEdges17;
+            txtPesquisar.DefaultText = "";
+            txtPesquisar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtPesquisar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtPesquisar.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtPesquisar.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtPesquisar.FocusedState.BorderColor = Color.FromArgb(213, 218, 223);
+            txtPesquisar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtPesquisar.ForeColor = Color.FromArgb(130, 130, 130);
+            txtPesquisar.HoverState.BorderColor = Color.FromArgb(213, 218, 223);
+            txtPesquisar.IconLeft = (Image)resources.GetObject("txtPesquisar.IconLeft");
+            txtPesquisar.Location = new Point(322, 17);
+            txtPesquisar.Margin = new Padding(4);
+            txtPesquisar.Name = "txtPesquisar";
+            txtPesquisar.PlaceholderForeColor = Color.FromArgb(130, 130, 130);
+            txtPesquisar.PlaceholderText = "Pesquisar";
+            txtPesquisar.SelectedText = "";
+            txtPesquisar.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            txtPesquisar.Size = new Size(405, 40);
+            txtPesquisar.TabIndex = 2;
+            // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -271,6 +298,7 @@
             BackColor = Color.White;
             ClientSize = new Size(1424, 944);
             ControlBox = false;
+            Controls.Add(txtPesquisar);
             Controls.Add(guna2Panel1);
             Name = "FrmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
@@ -292,5 +320,6 @@
         private Guna.UI2.WinForms.Guna2Button btnPerfil;
         private Guna.UI2.WinForms.Guna2Button btnMeusLivros;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2TextBox txtPesquisar;
     }
 }
