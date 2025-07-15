@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -69,6 +70,35 @@ namespace BiblioTechClass
             cmd.Connection.Close();
 
             return resultado; 
+        }
+
+        /// <summary>
+        /// Método para obter um objeto Reserva por id
+        /// </summary>
+        /// <param name="id">id da Reserva</param>
+        /// <returns>Objeto Reserva</returns>
+        public static Reserva ObterPorId(int id)
+        {
+            Reserva reserva = new();
+            var cmd = Banco.Abrir();
+            cmd.CommandText = $"select * from reservas where id = {id}";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                reserva = new
+                    (
+                        dr.GetInt32(0),
+                        Usuario.ObterPorId(dr.GetInt32(1)),
+                        Livro.ObterPorId(dr.GetInt32(2)),
+                        dr.GetDateTime(3),
+                        dr.GetDateTime(4),
+                        dr.GetString(5)
+                    );
+            }
+            dr.Close();
+            cmd.Connection.Close();
+
+            return reserva;
         }
     }
 }
