@@ -48,6 +48,23 @@ namespace BiblioTechClass
         }
 
         /// <summary>
+        /// Método para Adicionar um usuario ao banco de dados!
+        /// </summary>
+        public void Adicionar()
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "sp_usuarios_insert";
+            cmd.Parameters.AddWithValue("spnome", Nome);
+            cmd.Parameters.AddWithValue("spemail", Email);
+            cmd.Parameters.AddWithValue("spsenha", Senha);
+            cmd.Parameters.AddWithValue("spdata_nascimento", DataNascimento);
+
+            Id = Convert.ToInt32(cmd.ExecuteScalar());
+            cmd.Connection.Close();
+        }
+
+        /// <summary>
         /// Método para Obter um objeto Usuario
         /// </summary>
         /// <param name="id">Id do usuario</param>
