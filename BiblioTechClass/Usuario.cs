@@ -47,6 +47,11 @@ namespace BiblioTechClass
             Senha = senha;
         }
 
+        /// <summary>
+        /// Método para Obter um objeto Usuario
+        /// </summary>
+        /// <param name="id">Id do usuario</param>
+        /// <returns>Objeto Usuario</returns>
         public static Usuario ObterPorId(int id)
         {
             Usuario usuario = new();
@@ -58,10 +63,16 @@ namespace BiblioTechClass
             {
                 usuario = new
                     (
-                       
+                          dr.GetInt32(0),
+                          dr.GetString(1),
+                          dr.GetString(2),
+                          dr.GetString(3),
+                          dr.GetDateTime(4),
+                          dr.GetInt32(5)
                     );
             }
-
+            dr.Close();
+            cmd.Connection.Close();
             return usuario;
         }
     }
