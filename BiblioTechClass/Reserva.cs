@@ -53,5 +53,22 @@ namespace BiblioTechClass
             Id = Convert.ToInt32(cmd.ExecuteScalar());
             cmd.Connection.Close();
         }
+
+        /// <summary>
+        /// Método para finalizar uma reserva!
+        /// </summary>
+        /// <returns>booleano</returns>
+        public bool Finalizar()
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "sp_reservas_finalizar";
+            cmd.Parameters.AddWithValue("spid", Id);
+
+            bool resultado = cmd.ExecuteNonQuery() > 0 ? true : false;
+            cmd.Connection.Close();
+
+            return resultado; 
+        }
     }
 }
