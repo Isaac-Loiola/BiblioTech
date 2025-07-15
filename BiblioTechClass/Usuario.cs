@@ -81,6 +81,25 @@ namespace BiblioTechClass
             return resultado;
         }
 
+        /// <summary>
+        /// Método para atualizar um usuario!
+        /// (Apenas a senha)
+        /// </summary>
+        /// <returns>booleano</returns>
+        public bool Atualizar()
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "sp_usuarios_insert";
+            cmd.Parameters.AddWithValue("spid",Id);
+            cmd.Parameters.AddWithValue("spstatus", Senha);
+
+            bool resultado = cmd.ExecuteNonQuery() > 0 ? true : false;
+
+            cmd.Connection.Close();
+            return resultado;
+        }
+
         public static Usuario EfetuarLogin()
         {
             Usuario usuario = new();
