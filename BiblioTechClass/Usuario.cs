@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -47,6 +48,8 @@ namespace BiblioTechClass
             Senha = senha;
         }
 
+        
+        
         /// <summary>
         /// Método para Adicionar um usuario ao banco de dados!
         /// </summary>
@@ -62,6 +65,27 @@ namespace BiblioTechClass
 
             Id = Convert.ToInt32(cmd.ExecuteScalar());
             cmd.Connection.Close();
+        }
+
+        public static bool AtualizarStatus(int id, int status)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "sp_usuarios_insert";
+            cmd.Parameters.AddWithValue("spid", id);
+            cmd.Parameters.AddWithValue("spstatus", status);
+
+            bool resultado = cmd.ExecuteNonQuery() > 0 ? true : false;
+
+            cmd.Connection.Close();
+            return resultado;
+        }
+
+        public static Usuario EfetuarLogin()
+        {
+            Usuario usuario = new();
+
+            return usuario;
         }
 
         /// <summary>
