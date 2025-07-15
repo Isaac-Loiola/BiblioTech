@@ -13,6 +13,12 @@ status bit(1) default 1,
 primary key(id)
 );
 
+create table niveis(
+id int auto_increment,
+nome char(3),
+primary key(id)
+);
+
 create table penalidades(
 id int auto_increment,
 id_usuario int ,
@@ -189,26 +195,25 @@ end$$
 delimiter $$
 create procedure sp_penalidades_insert(
 	spid_usuario int,
-    sptipo enum('banido', 'suspenso')
+    sptipo enum('banido', 'suspenso'),
+    spdata_fim datetime
 )
 begin
-	insert penalidades(id_usuario, tipo, status, data_inicio)
-	values(spid_usuario, sptipo, default, default);
+	insert penalidades(id_usuario, tipo, status, data_inicio, data_fim)
+	values(spid_usuario, sptipo, default, default, spdata_fim);
     select last_insert_id();
 end$$
 
 
 delimiter $$
 create procedure sp_penalidades_update(
-	spid int,
-    spstatus enum('fechada', 'aberta'),
-    spdata_fim datetime
+	spid int
 )
 begin
 	update penalidades
-    set status = 'fechada',
-    data_fim = current_timestamp
+    set status = 'fechada'
     where id = spid;
+    select * from penalidade where id = spid;
 end$$
 
 delimiter $$
@@ -219,6 +224,7 @@ create procedure sp_log_usuario_insert(
 begin
 	insert log_usuarios
     values(0, spid_usuario, default, spatividade);
+    select last_insert_id();
 end$$
 
 delimiter $$
