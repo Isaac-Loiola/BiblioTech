@@ -100,9 +100,27 @@ namespace BiblioTechClass
             return resultado;
         }
 
-        public static Usuario EfetuarLogin()
+        public static Usuario EfetuarLogin(string email, string senha)
         {
             Usuario usuario = new();
+
+            var cmd = Banco.Abrir();
+            cmd.CommandText = $"select * from usuarios where email = {email} and senha = {senha}";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                usuario = new
+                    (
+                          dr.GetInt32(0),
+                          dr.GetString(1),
+                          dr.GetString(2),
+                          dr.GetString(3),
+                          dr.GetDateTime(4),
+                          dr.GetInt32(5)
+                    );
+            }
+            dr.Close();
+            cmd.Connection.Close();
 
             return usuario;
         }
