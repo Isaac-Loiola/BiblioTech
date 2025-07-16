@@ -39,10 +39,15 @@ namespace BiblioTechDesk
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             ofdObterCapa.Filter = "Imagens (*.jpg ; *.png) | *.jpg; *.png";
-            if(ofdObterCapa.ShowDialog() == DialogResult.OK)
+            if (ofdObterCapa.ShowDialog() == DialogResult.OK)
             {
                 picCapaDoLivro.Image = Image.FromFile(ofdObterCapa.FileName);
             }
+        }
+
+        private void btnAdicionar_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

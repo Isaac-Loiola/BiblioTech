@@ -46,9 +46,11 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lblDestaque = new Guna.UI2.WinForms.Guna2HtmlLabel();
             picCapaDoLivro = new Guna.UI2.WinForms.Guna2PictureBox();
-            btnAdicionar = new Guna.UI2.WinForms.Guna2Button();
+            btnInserir = new Guna.UI2.WinForms.Guna2Button();
             txtDescricao = new Guna.UI2.WinForms.Guna2TextBox();
             txtDimensao = new Guna.UI2.WinForms.Guna2TextBox();
             txtNome = new Guna.UI2.WinForms.Guna2TextBox();
@@ -57,6 +59,7 @@
             cmbGenero = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             ofdObterCapa = new OpenFileDialog();
+            btnAdicionar = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)picCapaDoLivro).BeginInit();
             SuspendLayout();
             // 
@@ -76,7 +79,7 @@
             picCapaDoLivro.BorderRadius = 10;
             picCapaDoLivro.CustomizableEdges = customizableEdges1;
             picCapaDoLivro.ImageRotate = 0F;
-            picCapaDoLivro.Location = new Point(489, 292);
+            picCapaDoLivro.Location = new Point(460, 90);
             picCapaDoLivro.Name = "picCapaDoLivro";
             picCapaDoLivro.ShadowDecoration.CustomizableEdges = customizableEdges2;
             picCapaDoLivro.Size = new Size(191, 223);
@@ -84,24 +87,24 @@
             picCapaDoLivro.TabIndex = 7;
             picCapaDoLivro.TabStop = false;
             // 
-            // btnAdicionar
+            // btnInserir
             // 
-            btnAdicionar.BorderRadius = 10;
-            btnAdicionar.CustomizableEdges = customizableEdges3;
-            btnAdicionar.DisabledState.BorderColor = Color.DarkGray;
-            btnAdicionar.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnAdicionar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnAdicionar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnAdicionar.FillColor = Color.Black;
-            btnAdicionar.Font = new Font("Segoe UI", 9F);
-            btnAdicionar.ForeColor = Color.White;
-            btnAdicionar.Location = new Point(489, 539);
-            btnAdicionar.Name = "btnAdicionar";
-            btnAdicionar.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnAdicionar.Size = new Size(191, 35);
-            btnAdicionar.TabIndex = 8;
-            btnAdicionar.Text = "Adicionar";
-            btnAdicionar.Click += btnAdicionar_Click;
+            btnInserir.BorderRadius = 10;
+            btnInserir.CustomizableEdges = customizableEdges3;
+            btnInserir.DisabledState.BorderColor = Color.DarkGray;
+            btnInserir.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnInserir.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnInserir.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnInserir.FillColor = Color.Black;
+            btnInserir.Font = new Font("Segoe UI", 9F);
+            btnInserir.ForeColor = Color.White;
+            btnInserir.Location = new Point(460, 326);
+            btnInserir.Name = "btnInserir";
+            btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnInserir.Size = new Size(191, 35);
+            btnInserir.TabIndex = 8;
+            btnInserir.Text = "Inserir";
+            btnInserir.Click += btnAdicionar_Click;
             // 
             // txtDescricao
             // 
@@ -231,10 +234,28 @@
             // 
             ofdObterCapa.FileName = "openFileDialog1";
             // 
+            // btnAdicionar
+            // 
+            btnAdicionar.CustomizableEdges = customizableEdges19;
+            btnAdicionar.DisabledState.BorderColor = Color.DarkGray;
+            btnAdicionar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAdicionar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAdicionar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAdicionar.Font = new Font("Segoe UI", 9F);
+            btnAdicionar.ForeColor = Color.White;
+            btnAdicionar.Location = new Point(460, 725);
+            btnAdicionar.Name = "btnAdicionar";
+            btnAdicionar.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            btnAdicionar.Size = new Size(180, 45);
+            btnAdicionar.TabIndex = 13;
+            btnAdicionar.Text = "Adicionar Livro";
+            btnAdicionar.Click += btnAdicionar_Click_1;
+            // 
             // UscGerenciadorLivro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnAdicionar);
             Controls.Add(guna2DateTimePicker1);
             Controls.Add(cmbGenero);
             Controls.Add(cmbEditora);
@@ -242,7 +263,7 @@
             Controls.Add(txtNome);
             Controls.Add(txtDimensao);
             Controls.Add(txtDescricao);
-            Controls.Add(btnAdicionar);
+            Controls.Add(btnInserir);
             Controls.Add(picCapaDoLivro);
             Controls.Add(lblDestaque);
             Name = "UscGerenciadorLivro";
@@ -257,7 +278,7 @@
 
         private Guna.UI2.WinForms.Guna2HtmlLabel lblDestaque;
         private Guna.UI2.WinForms.Guna2PictureBox picCapaDoLivro;
-        private Guna.UI2.WinForms.Guna2Button btnAdicionar;
+        private Guna.UI2.WinForms.Guna2Button btnInserir;
         private Guna.UI2.WinForms.Guna2TextBox txtDescricao;
         private Guna.UI2.WinForms.Guna2TextBox txtDimensao;
         private Guna.UI2.WinForms.Guna2TextBox txtNome;
@@ -266,5 +287,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox cmbGenero;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
         private OpenFileDialog ofdObterCapa;
+        private Guna.UI2.WinForms.Guna2Button btnAdicionar;
     }
 }
