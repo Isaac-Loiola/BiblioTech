@@ -74,7 +74,7 @@ namespace BiblioTechClass
             return autor;
         }
 
-        public List<Autor> ObterLista()
+        public static List<Autor> ObterLista()
         {
             List<Autor> autores = new();
 

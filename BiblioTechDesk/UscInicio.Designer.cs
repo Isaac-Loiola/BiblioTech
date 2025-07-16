@@ -111,6 +111,7 @@
             Controls.Add(flpDestaque);
             Name = "UscInicio";
             Size = new Size(1054, 854);
+            Load += UscInicio_Load;
             ResumeLayout(false);
             PerformLayout();
         }

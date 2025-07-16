@@ -55,7 +55,7 @@ namespace BiblioTechClass
         /// Método para obter lista de todas editoras
         /// </summary>
         /// <returns>lista do tipo Editora</returns>
-        public List<Editora> ObterLista()
+        public static List<Editora> ObterLista()
         {
             List<Editora> editoras = new();
 

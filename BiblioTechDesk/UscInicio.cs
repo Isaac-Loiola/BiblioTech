@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace BiblioTechDesk
 {
-    public partial class UscInicio: UserControl
+    public partial class UscInicio : UserControl
     {
         public UscInicio()
         {
             InitializeComponent();
+        }
+
+        private void UscInicio_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
