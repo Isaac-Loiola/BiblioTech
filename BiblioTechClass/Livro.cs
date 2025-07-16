@@ -18,13 +18,13 @@ namespace BiblioTechClass
         public string Dimensao { get; set; }
         public Genero Genero { get; set; }
         public DateTime DataPublicacao { get; set; }
-        public Stream Imagem { get; set; }
+        public byte[] Imagem { get; set; }
         
         public Livro()
         {
 
         }
-        public Livro(int id, string nome, Autor autor, Editora editora, string descricao, string dimensao, Genero genero, DateTime dataPublicacao, Stream imagem)
+        public Livro(int id, string nome, Autor autor, Editora editora, string descricao, string dimensao, Genero genero, DateTime dataPublicacao, byte[] imagem)
         {
             Id = id;
             Nome = nome;
@@ -36,7 +36,7 @@ namespace BiblioTechClass
             DataPublicacao = dataPublicacao;
             Imagem = imagem;
         }
-        public Livro( string nome, Autor autor, Editora editora, string descricao, string dimensao, Genero genero, DateTime dataPublicacao, Stream imagem)
+        public Livro( string nome, Autor autor, Editora editora, string descricao, string dimensao, Genero genero, DateTime dataPublicacao, byte[] imagem)
         {
             Nome = nome;
             Autor = autor;
@@ -94,7 +94,7 @@ namespace BiblioTechClass
                         dr.GetString(5),
                         Genero.ObterPorId(dr.GetInt32(6)),
                         dr.GetDateTime(7),
-                        dr.GetStream(8)
+                        (byte[])dr.GetValue(8)
                     );
             }
             dr.Close();
@@ -128,7 +128,7 @@ namespace BiblioTechClass
                             dr.GetString(5),
                             Genero.ObterPorId(dr.GetInt32(6)),
                             dr.GetDateTime(7),
-                            dr.GetStream(8)
+                            (byte[])dr.GetValue(8)
                         )
                     );
                
