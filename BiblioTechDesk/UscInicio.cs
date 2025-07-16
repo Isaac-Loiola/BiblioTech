@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BiblioTechClass;
 
 namespace BiblioTechDesk
 {
@@ -19,7 +20,12 @@ namespace BiblioTechDesk
 
         private void UscInicio_Load(object sender, EventArgs e)
         {
+            var livros = Livro.ObterLista();
 
+            foreach(var livro in livros)
+            {
+
+            }
         }
     }
 }

@@ -138,5 +138,39 @@ namespace BiblioTechClass
 
             return livros;
         }
+
+
+        // TO DO!!!!!!
+        public static List<Livro> ObterLivrosEmDestaque()
+        {
+            List<Livro> livrosDestaque = new();
+
+            var cmd = Banco.Abrir();
+            cmd.CommandText = $"select * from livros limit 4";
+            var dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                livrosDestaque.Add
+                    (
+                        new
+                        (
+                            dr.GetInt32(0),
+                            dr.GetString(1),
+                            Autor.ObterPorId(dr.GetInt32(2)),
+                            Editora.ObterPorId(dr.GetInt32(3)),
+                            dr.GetString(4),
+                            dr.GetString(5),
+                            Genero.ObterPorId(dr.GetInt32(6)),
+                            dr.GetDateTime(7),
+                            (byte[])dr.GetValue(8)
+                        )
+                    );
+
+            }
+            dr.Close();
+            cmd.Connection.Close();
+
+            return livrosDestaque;
+        }
     }
 }
