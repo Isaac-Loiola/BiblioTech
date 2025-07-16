@@ -47,7 +47,24 @@ namespace BiblioTechDesk
 
         private void btnAdicionar_Click_1(object sender, EventArgs e)
         {
+            byte[] imBytes;
+            MemoryStream ms = new();
+            picCapaDoLivro.Image.Save(ms, picCapaDoLivro.Image.RawFormat);
+            imBytes = ms.ToArray();
 
+            Livro livro = new
+                (
+                    txtNome.Text,
+                    Autor.ObterPorId(Convert.ToInt32(cmbAutor.SelectedValue)),
+                    Editora.ObterPorId(Convert.ToInt32(cmbEditora.SelectedValue)),
+                    txtDescricao.Text,
+                    txtDimensao.Text,
+                    Genero.ObterPorId(Convert.ToInt32(cmbGenero.SelectedValue)),
+                    dtpDataPublicacao.Value,
+                    imBytes
+                );
+
+            livro.Adicionar();
         }
     }
 }
