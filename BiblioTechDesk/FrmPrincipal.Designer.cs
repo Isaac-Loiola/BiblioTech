@@ -30,6 +30,9 @@
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -48,12 +51,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             lblPessoal = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblDescubra = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            btnGerenciar = new Guna.UI2.WinForms.Guna2Button();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             btnAvisos = new Guna.UI2.WinForms.Guna2Button();
             btnPerfil = new Guna.UI2.WinForms.Guna2Button();
@@ -63,7 +64,6 @@
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             txtPesquisar = new Guna.UI2.WinForms.Guna2TextBox();
             pnlInicio = new Guna.UI2.WinForms.Guna2Panel();
-            btnGerenciar = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             SuspendLayout();
@@ -112,6 +112,32 @@
             lblDescubra.TabIndex = 5;
             lblDescubra.Text = "Descubra";
             // 
+            // btnGerenciar
+            // 
+            btnGerenciar.BorderRadius = 10;
+            btnGerenciar.CustomizableEdges = customizableEdges1;
+            btnGerenciar.DisabledState.BorderColor = Color.DarkGray;
+            btnGerenciar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnGerenciar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnGerenciar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnGerenciar.FillColor = Color.White;
+            btnGerenciar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            btnGerenciar.ForeColor = Color.Black;
+            btnGerenciar.HoverState.BorderColor = Color.FromArgb(247, 247, 247);
+            btnGerenciar.HoverState.CustomBorderColor = Color.FromArgb(247, 247, 247);
+            btnGerenciar.HoverState.FillColor = Color.FromArgb(247, 247, 247);
+            btnGerenciar.Image = (Image)resources.GetObject("btnGerenciar.Image");
+            btnGerenciar.ImageAlign = HorizontalAlignment.Left;
+            btnGerenciar.Location = new Point(8, 851);
+            btnGerenciar.Name = "btnGerenciar";
+            btnGerenciar.PressedColor = Color.FromArgb(247, 247, 247);
+            btnGerenciar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnGerenciar.Size = new Size(240, 40);
+            btnGerenciar.TabIndex = 4;
+            btnGerenciar.Text = "Gerenciar";
+            btnGerenciar.TextAlign = HorizontalAlignment.Left;
+            btnGerenciar.Click += btnGerenciar_Click;
+            // 
             // guna2Button1
             // 
             guna2Button1.BorderRadius = 10;
@@ -136,6 +162,7 @@
             guna2Button1.TabIndex = 4;
             guna2Button1.Text = "Sair";
             guna2Button1.TextAlign = HorizontalAlignment.Left;
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // btnAvisos
             // 
@@ -211,6 +238,7 @@
             btnReservar.TabIndex = 4;
             btnReservar.Text = "Reservar";
             btnReservar.TextAlign = HorizontalAlignment.Left;
+            btnReservar.Click += btnReservar_Click;
             // 
             // btnMeusLivros
             // 
@@ -308,32 +336,6 @@
             pnlInicio.Size = new Size(1054, 854);
             pnlInicio.TabIndex = 3;
             pnlInicio.Paint += pnlInicio_Paint;
-            // 
-            // btnGerenciar
-            // 
-            btnGerenciar.BorderRadius = 10;
-            btnGerenciar.CustomizableEdges = customizableEdges1;
-            btnGerenciar.DisabledState.BorderColor = Color.DarkGray;
-            btnGerenciar.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnGerenciar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnGerenciar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnGerenciar.FillColor = Color.White;
-            btnGerenciar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            btnGerenciar.ForeColor = Color.Black;
-            btnGerenciar.HoverState.BorderColor = Color.FromArgb(247, 247, 247);
-            btnGerenciar.HoverState.CustomBorderColor = Color.FromArgb(247, 247, 247);
-            btnGerenciar.HoverState.FillColor = Color.FromArgb(247, 247, 247);
-            btnGerenciar.Image = (Image)resources.GetObject("btnGerenciar.Image");
-            btnGerenciar.ImageAlign = HorizontalAlignment.Left;
-            btnGerenciar.Location = new Point(8, 851);
-            btnGerenciar.Name = "btnGerenciar";
-            btnGerenciar.PressedColor = Color.FromArgb(247, 247, 247);
-            btnGerenciar.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnGerenciar.Size = new Size(240, 40);
-            btnGerenciar.TabIndex = 4;
-            btnGerenciar.Text = "Gerenciar";
-            btnGerenciar.TextAlign = HorizontalAlignment.Left;
-            btnGerenciar.Click += btnGerenciar_Click;
             // 
             // FrmPrincipal
             // 

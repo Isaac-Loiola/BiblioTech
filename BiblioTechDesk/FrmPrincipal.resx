@@ -120,16 +120,16 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnGerenciar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAHPSURBVEhLzZZLSl1BEIY/VDAbUPBBdqGiTlTQbegkbiLZ
-        g4+Jug0dqwEDKqjJzGSQiaPgJKARHQSVT7qhbt9zz71eRfyhoPvUX1Wn+9TjwDvGYJJXxzgwGfanSTKm
-        gLGw7xrfgH/AEvAFuE/yOT27AQ5Ko04xCvQAvcAZ8NBGThJXG207gkTf2AA/Kpy2ErnaaNtRMN+qPMUV
-        sALMAxdJXK8C1wVXW320hVcQT7ILDAX97yQZw8BecTJ9tMQEcAh8D0ZHQH/BKwMJOcfBTh/6MmObMJ0y
-        KF7Df2ALGEicEeBPEtdCnRy50VZfsSwaYLpm4nY43V9gE7gLetcbSZdPsRP0i6XzCGsjE2fSXS8Dl+H5
-        OfAz7NXJkTsXnuurCbYUqz2TlI9B/ykE6UuSg6nL0Cb60Ge+9ifkQNbAawXSl4XcECgjXt1si6szwK+w
-        f9bVZdQlgx8+JsNtm2TQVyU6SW+LM6e3a1GX3nb2JlhcFllsPxbhh4JXVbByYsH6vfVVOz7KFrQf3l6U
-        gdR9Dfy2LSijqqnaONeAhdBUXa+/pKm+2ZgQcfCVhVwlcp49+Eo4ps2gqlFuP3PMdz3KI8ycup8TdbXZ
-        1S2sm8q28i7wCCbj+R2Vm7+5AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DgAACw4BQL7hQQAAAc9JREFUSEvNlktKXUEQhj9UMBtQ8EF2oaJOVNBt6CRuItmDj4m6DR2rAQMqqMnM
+        ZJCJo+AkoBEdBJVPuqFu33PPvV5F/KGg+9RfVaf71OPAO8ZgklfHODAZ9qdJMqaAsbDvGt+Af8AS8AW4
+        T/I5PbsBDkqjTjEK9AC9wBnw0EZOElcbbTuCRN/YAD8qnLYSudpo21Ew36o8xRWwAswDF0lcrwLXBVdb
+        fbSFVxBPsgsMBf3vJBnDwF5xMn20xARwCHwPRkdAf8ErAwk5x8FOH/oyY5swnTIoXsN/YAsYSJwR4E8S
+        10KdHLnRVl+xLBpgumbidjjdX2ATuAt61xtJl0+xE/SLpfMIayMTZ9JdLwOX4fk58DPs1cmROxee66sJ
+        thSrPZOUj0H/KQTpS5KDqcvQJvrQZ772J+RA1sBrBdKXhdwQKCNe3WyLqzPAr7B/1tVl1CWDHz4mw22b
+        ZNBXJTpJb4szp7drUZfedvYmWFwWWWw/FuGHgldVsHJiwfq99VU7PsoWtB/eXpSB1H0N/LYtKKOqqdo4
+        14CF0FRdr7+kqb7ZmBBx8JWFXCVynj34SjimzaCqUW4/c8x3PcojzJy6nxN1tdnVLaybyrbyLvAIJuP5
+        HZWbv7kAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="guna2Button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
