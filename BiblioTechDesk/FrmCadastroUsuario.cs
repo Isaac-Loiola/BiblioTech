@@ -29,7 +29,10 @@ namespace BiblioTechDesk
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            pnlEndereco.Visible = false;
+            //pnlEndereco.Visible = false;
+            this.Close();
+            FrmPrincipal frmPrincipal = new();
+            frmPrincipal.Show();
         }
     }
 }

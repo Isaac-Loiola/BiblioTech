@@ -19,7 +19,9 @@ namespace BiblioTechDesk
 
         private void guna2HtmlLabel2_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            FrmCadastroUsuario frmCadastroUsuario = new();
+            frmCadastroUsuario.ShowDialog();
         }
     }
 }
