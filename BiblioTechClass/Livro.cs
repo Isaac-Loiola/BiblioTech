@@ -114,7 +114,7 @@ namespace BiblioTechClass
             var cmd = Banco.Abrir();
             cmd.CommandText = $"select * from livros";
             var dr = cmd.ExecuteReader();
-            if (dr.Read())
+            while (dr.Read())
             {
                 livros.Add
                     (

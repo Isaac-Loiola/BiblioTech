@@ -40,5 +40,11 @@ namespace BiblioTechDesk
         {
             this.Close();
         }
+
+        private void btnReservar_Click(object sender, EventArgs e)
+        {
+            UscReservar uscReservar = new();
+            AssociarUserControla(uscReservar);
+        }
     }
 }

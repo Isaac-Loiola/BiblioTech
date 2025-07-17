@@ -238,6 +238,7 @@
             btnReservar.TabIndex = 4;
             btnReservar.Text = "Reservar";
             btnReservar.TextAlign = HorizontalAlignment.Left;
+            btnReservar.Click += btnReservar_Click;
             // 
             // btnMeusLivros
             // 
