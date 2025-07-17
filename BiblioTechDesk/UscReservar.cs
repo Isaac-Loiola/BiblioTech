@@ -20,6 +20,14 @@ namespace BiblioTechDesk
             InitializeComponent();
         }
         
+        private void ExibirDetalhesDoLivro()
+        {
+            this.Controls.Clear();
+            UscDetalheLivro uscDetalheLivro = new();
+            uscDetalheLivro.Dock = DockStyle.Fill;
+            this.Controls.Add(uscDetalheLivro);
+        }
+
         private void UscReservar_Load(object sender, EventArgs e)
         {
             var livros = Livro.ObterLista();
@@ -56,8 +64,27 @@ namespace BiblioTechDesk
                 LblDescricao.Location = new Point(3, 328);
                 LblDescricao.Text = livro.Descricao;
 
-                painel.Click += ( sender,  e) =>
+                painel.MouseEnter += ( sender,  e) =>
                 {
+                    LblNome.MouseClick += (sender, e) =>
+                    {
+                        ExibirDetalhesDoLivro();
+                    };
+
+                    Picbox.MouseClick += (sender, e) =>
+                    {
+                        ExibirDetalhesDoLivro();
+                    };
+
+                    painel.MouseClick += (sender, e) =>
+                    {
+                        ExibirDetalhesDoLivro();
+                    };
+
+                    LblDescricao.MouseClick += (sender, e) =>
+                    {
+                        ExibirDetalhesDoLivro();
+                    };
 
                 };
 
