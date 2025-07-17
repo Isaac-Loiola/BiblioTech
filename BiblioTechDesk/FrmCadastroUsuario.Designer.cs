@@ -227,7 +227,7 @@
             pnlEndereco.Location = new Point(141, 167);
             pnlEndereco.Name = "pnlEndereco";
             pnlEndereco.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            pnlEndereco.Size = new Size(815, 495);
+            pnlEndereco.Size = new Size(188, 252);
             pnlEndereco.TabIndex = 9;
             pnlEndereco.Visible = false;
             // 
