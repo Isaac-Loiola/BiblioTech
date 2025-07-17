@@ -35,5 +35,10 @@ namespace BiblioTechDesk
             UscGerenciadorLivro uscGerenciadorLivro = new();
             AssociarUserControla(uscGerenciadorLivro);
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
