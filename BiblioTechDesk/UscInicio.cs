@@ -68,6 +68,9 @@ namespace BiblioTechDesk
 
                 flpDestaque.Controls.Add(painel);
             }
+
+            flpMaisAdquiridos.Controls.Clear();
+
         }
 
         private void flpDestaque_Paint(object sender, PaintEventArgs e)
