@@ -10,29 +10,29 @@ using System.Windows.Forms;
 
 namespace BiblioTechDesk
 {
-    public partial class FrmCadastroUsuario : Form
+    public partial class FrmAcesso : Form
     {
-        public FrmCadastroUsuario()
+        public FrmAcesso()
         {
             InitializeComponent();
         }
 
-        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
         {
-
+            pnlCadastro.Visible = true;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+
             pnlEndereco.Visible = true;
         }
 
-        private void btnFinalizar_Click(object sender, EventArgs e)
+        private void btnFinalizar_Click_1(object sender, EventArgs e)
         {
-            //pnlEndereco.Visible = false;
-            this.Close();
+            this.Hide();
             FrmPrincipal frmPrincipal = new();
-            frmPrincipal.Show();
+            frmPrincipal.ShowDialog();
         }
     }
 }

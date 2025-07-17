@@ -1,6 +1,6 @@
 ﻿namespace BiblioTechDesk
 {
-    partial class FrmLogin
+    partial class FrmAcesso
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAcesso));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -37,6 +37,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -49,8 +51,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -69,6 +69,7 @@
             btnLogar = new Guna.UI2.WinForms.Guna2Button();
             lblCadastro = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblOu = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            pnlCadastro = new Guna.UI2.WinForms.Guna2Panel();
             pnlEndereco = new Guna.UI2.WinForms.Guna2Panel();
             btnFinalizar = new Guna.UI2.WinForms.Guna2Button();
             lblComplemento = new Guna.UI2.WinForms.Guna2TextBox();
@@ -77,7 +78,6 @@
             lblLogradouro = new Guna.UI2.WinForms.Guna2TextBox();
             lblAjudaEndereco = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblEndereco = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            pnlCadastro = new Guna.UI2.WinForms.Guna2Panel();
             dtpDataNascimento = new Guna.UI2.WinForms.Guna2DateTimePicker();
             btnCadastrar = new Guna.UI2.WinForms.Guna2Button();
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -86,8 +86,8 @@
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
-            pnlEndereco.SuspendLayout();
             pnlCadastro.SuspendLayout();
+            pnlEndereco.SuspendLayout();
             SuspendLayout();
             // 
             // guna2PictureBox1
@@ -214,6 +214,24 @@
             lblOu.Text = "ou";
             lblOu.Click += guna2HtmlLabel2_Click;
             // 
+            // pnlCadastro
+            // 
+            pnlCadastro.Controls.Add(pnlEndereco);
+            pnlCadastro.Controls.Add(dtpDataNascimento);
+            pnlCadastro.Controls.Add(btnCadastrar);
+            pnlCadastro.Controls.Add(guna2TextBox1);
+            pnlCadastro.Controls.Add(txtNome);
+            pnlCadastro.Controls.Add(guna2TextBox2);
+            pnlCadastro.Controls.Add(guna2HtmlLabel2);
+            pnlCadastro.Controls.Add(guna2HtmlLabel3);
+            pnlCadastro.CustomizableEdges = customizableEdges31;
+            pnlCadastro.Location = new Point(486, 180);
+            pnlCadastro.Name = "pnlCadastro";
+            pnlCadastro.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            pnlCadastro.Size = new Size(493, 408);
+            pnlCadastro.TabIndex = 5;
+            pnlCadastro.Visible = false;
+            // 
             // pnlEndereco
             // 
             pnlEndereco.Controls.Add(btnFinalizar);
@@ -224,11 +242,12 @@
             pnlEndereco.Controls.Add(lblAjudaEndereco);
             pnlEndereco.Controls.Add(lblEndereco);
             pnlEndereco.CustomizableEdges = customizableEdges19;
-            pnlEndereco.Location = new Point(32, 107);
+            pnlEndereco.Location = new Point(0, 2);
             pnlEndereco.Name = "pnlEndereco";
             pnlEndereco.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            pnlEndereco.Size = new Size(493, 360);
-            pnlEndereco.TabIndex = 4;
+            pnlEndereco.Size = new Size(493, 408);
+            pnlEndereco.TabIndex = 6;
+            pnlEndereco.Visible = false;
             // 
             // btnFinalizar
             // 
@@ -247,6 +266,7 @@
             btnFinalizar.Size = new Size(400, 40);
             btnFinalizar.TabIndex = 21;
             btnFinalizar.Text = "Finalizar";
+            btnFinalizar.Click += btnFinalizar_Click_1;
             // 
             // lblComplemento
             // 
@@ -363,22 +383,6 @@
             lblEndereco.TabIndex = 16;
             lblEndereco.Text = "Endereço";
             // 
-            // pnlCadastro
-            // 
-            pnlCadastro.Controls.Add(dtpDataNascimento);
-            pnlCadastro.Controls.Add(btnCadastrar);
-            pnlCadastro.Controls.Add(guna2TextBox1);
-            pnlCadastro.Controls.Add(txtNome);
-            pnlCadastro.Controls.Add(guna2TextBox2);
-            pnlCadastro.Controls.Add(guna2HtmlLabel2);
-            pnlCadastro.Controls.Add(guna2HtmlLabel3);
-            pnlCadastro.CustomizableEdges = customizableEdges31;
-            pnlCadastro.Location = new Point(910, 107);
-            pnlCadastro.Name = "pnlCadastro";
-            pnlCadastro.ShadowDecoration.CustomizableEdges = customizableEdges32;
-            pnlCadastro.Size = new Size(493, 360);
-            pnlCadastro.TabIndex = 5;
-            // 
             // dtpDataNascimento
             // 
             dtpDataNascimento.BackColor = Color.White;
@@ -414,6 +418,7 @@
             btnCadastrar.Size = new Size(400, 40);
             btnCadastrar.TabIndex = 14;
             btnCadastrar.Text = "Cadastrar";
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // guna2TextBox1
             // 
@@ -514,7 +519,6 @@
             ClientSize = new Size(1464, 861);
             ControlBox = false;
             Controls.Add(pnlCadastro);
-            Controls.Add(pnlEndereco);
             Controls.Add(btnLogar);
             Controls.Add(lblOu);
             Controls.Add(lblCadastro);
@@ -526,10 +530,10 @@
             Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
-            pnlEndereco.ResumeLayout(false);
-            pnlEndereco.PerformLayout();
             pnlCadastro.ResumeLayout(false);
             pnlCadastro.PerformLayout();
+            pnlEndereco.ResumeLayout(false);
+            pnlEndereco.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -544,14 +548,6 @@
         private Guna.UI2.WinForms.Guna2Button btnLogar;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblCadastro;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblOu;
-        private Guna.UI2.WinForms.Guna2Panel pnlEndereco;
-        private Guna.UI2.WinForms.Guna2Button btnFinalizar;
-        private Guna.UI2.WinForms.Guna2TextBox lblComplemento;
-        private Guna.UI2.WinForms.Guna2TextBox lblNumero;
-        private Guna.UI2.WinForms.Guna2TextBox lblCep;
-        private Guna.UI2.WinForms.Guna2TextBox lblLogradouro;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblAjudaEndereco;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblEndereco;
         private Guna.UI2.WinForms.Guna2Panel pnlCadastro;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpDataNascimento;
         private Guna.UI2.WinForms.Guna2Button btnCadastrar;
@@ -560,5 +556,13 @@
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2Panel pnlEndereco;
+        private Guna.UI2.WinForms.Guna2Button btnFinalizar;
+        private Guna.UI2.WinForms.Guna2TextBox lblComplemento;
+        private Guna.UI2.WinForms.Guna2TextBox lblNumero;
+        private Guna.UI2.WinForms.Guna2TextBox lblCep;
+        private Guna.UI2.WinForms.Guna2TextBox lblLogradouro;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblAjudaEndereco;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblEndereco;
     }
 }
