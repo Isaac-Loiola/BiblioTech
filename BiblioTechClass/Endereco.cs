@@ -12,14 +12,13 @@ namespace BiblioTechClass
     {
         public int Id { get; set; }
         public Usuario Usuario { get; set; }
-        public string Cep { get; set; }
-        public string Logradouro { get; set; }
-        public string Numero { get; set; }
-        public string Complemento { get; set; }
-        public string Bairro { get; set; }
-        public string Cidade { get; set; }
-        public string Uf { get; set; }
-        public string Tipo { get; set; }
+        public string? Cep { get; set; }
+        public string? Logradouro { get; set; }
+        public string? Numero { get; set; }
+        public string? Complemento { get; set; }
+        public string? Bairro { get; set; }
+        public string? Cidade { get; set; }
+        public string? Uf { get; set; }
         
         public Endereco()
         {
@@ -36,7 +35,6 @@ namespace BiblioTechClass
             Bairro = bairro;
             Cidade = cidade;
             Uf = uf;
-            Tipo = tipo;
         }
 
         public Endereco(Usuario usuario, string cep, string logradouro, string numero, string complemento, string bairro, string cidade, string uf, string tipo)
@@ -49,7 +47,6 @@ namespace BiblioTechClass
             Bairro = bairro;
             Cidade = cidade;
             Uf = uf;
-            Tipo = tipo;
         }
         
         /// <summary>
@@ -68,7 +65,6 @@ namespace BiblioTechClass
             cmd.Parameters.AddWithValue("spbairro", Bairro);
             cmd.Parameters.AddWithValue("spcidade", Cidade);
             cmd.Parameters.AddWithValue("spuf", Uf);
-            cmd.Parameters.AddWithValue("sptipo", Tipo);
 
             Id = Convert.ToInt32(cmd.ExecuteScalar());
             cmd.Connection.Close();

@@ -72,17 +72,17 @@
             pnlCadastro = new Guna.UI2.WinForms.Guna2Panel();
             pnlEndereco = new Guna.UI2.WinForms.Guna2Panel();
             btnFinalizar = new Guna.UI2.WinForms.Guna2Button();
-            lblComplemento = new Guna.UI2.WinForms.Guna2TextBox();
-            lblNumero = new Guna.UI2.WinForms.Guna2TextBox();
-            lblCep = new Guna.UI2.WinForms.Guna2TextBox();
-            lblLogradouro = new Guna.UI2.WinForms.Guna2TextBox();
+            txtComplemento = new Guna.UI2.WinForms.Guna2TextBox();
+            txtNumero = new Guna.UI2.WinForms.Guna2TextBox();
+            txtCep = new Guna.UI2.WinForms.Guna2TextBox();
+            txtLogradouro = new Guna.UI2.WinForms.Guna2TextBox();
             lblAjudaEndereco = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblEndereco = new Guna.UI2.WinForms.Guna2HtmlLabel();
             dtpDataNascimento = new Guna.UI2.WinForms.Guna2DateTimePicker();
             btnCadastrar = new Guna.UI2.WinForms.Guna2Button();
-            guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            txtSenhaCadastro = new Guna.UI2.WinForms.Guna2TextBox();
             txtNome = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            txtEmailCadastro = new Guna.UI2.WinForms.Guna2TextBox();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
@@ -188,6 +188,7 @@
             btnLogar.Size = new Size(400, 40);
             btnLogar.TabIndex = 3;
             btnLogar.Text = "Logar";
+            btnLogar.Click += btnLogar_Click;
             // 
             // lblCadastro
             // 
@@ -219,9 +220,9 @@
             pnlCadastro.Controls.Add(pnlEndereco);
             pnlCadastro.Controls.Add(dtpDataNascimento);
             pnlCadastro.Controls.Add(btnCadastrar);
-            pnlCadastro.Controls.Add(guna2TextBox1);
+            pnlCadastro.Controls.Add(txtSenhaCadastro);
             pnlCadastro.Controls.Add(txtNome);
-            pnlCadastro.Controls.Add(guna2TextBox2);
+            pnlCadastro.Controls.Add(txtEmailCadastro);
             pnlCadastro.Controls.Add(guna2HtmlLabel2);
             pnlCadastro.Controls.Add(guna2HtmlLabel3);
             pnlCadastro.CustomizableEdges = customizableEdges31;
@@ -235,14 +236,14 @@
             // pnlEndereco
             // 
             pnlEndereco.Controls.Add(btnFinalizar);
-            pnlEndereco.Controls.Add(lblComplemento);
-            pnlEndereco.Controls.Add(lblNumero);
-            pnlEndereco.Controls.Add(lblCep);
-            pnlEndereco.Controls.Add(lblLogradouro);
+            pnlEndereco.Controls.Add(txtComplemento);
+            pnlEndereco.Controls.Add(txtNumero);
+            pnlEndereco.Controls.Add(txtCep);
+            pnlEndereco.Controls.Add(txtLogradouro);
             pnlEndereco.Controls.Add(lblAjudaEndereco);
             pnlEndereco.Controls.Add(lblEndereco);
             pnlEndereco.CustomizableEdges = customizableEdges19;
-            pnlEndereco.Location = new Point(0, 1);
+            pnlEndereco.Location = new Point(0, 0);
             pnlEndereco.Name = "pnlEndereco";
             pnlEndereco.ShadowDecoration.CustomizableEdges = customizableEdges20;
             pnlEndereco.Size = new Size(493, 408);
@@ -268,98 +269,99 @@
             btnFinalizar.Text = "Finalizar";
             btnFinalizar.Click += btnFinalizar_Click_1;
             // 
-            // lblComplemento
+            // txtComplemento
             // 
-            lblComplemento.BorderRadius = 10;
-            lblComplemento.CustomizableEdges = customizableEdges11;
-            lblComplemento.DefaultText = "";
-            lblComplemento.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            lblComplemento.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            lblComplemento.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            lblComplemento.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            lblComplemento.FocusedState.BorderColor = Color.FromArgb(213, 218, 223);
-            lblComplemento.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblComplemento.ForeColor = Color.FromArgb(130, 130, 130);
-            lblComplemento.HoverState.BorderColor = Color.FromArgb(213, 218, 223);
-            lblComplemento.Location = new Point(46, 259);
-            lblComplemento.Margin = new Padding(4);
-            lblComplemento.Name = "lblComplemento";
-            lblComplemento.PlaceholderForeColor = Color.FromArgb(130, 130, 130);
-            lblComplemento.PlaceholderText = "complemento";
-            lblComplemento.SelectedText = "";
-            lblComplemento.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            lblComplemento.Size = new Size(400, 40);
-            lblComplemento.TabIndex = 17;
+            txtComplemento.BorderRadius = 10;
+            txtComplemento.CustomizableEdges = customizableEdges11;
+            txtComplemento.DefaultText = "";
+            txtComplemento.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtComplemento.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtComplemento.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtComplemento.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtComplemento.FocusedState.BorderColor = Color.FromArgb(213, 218, 223);
+            txtComplemento.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtComplemento.ForeColor = Color.FromArgb(130, 130, 130);
+            txtComplemento.HoverState.BorderColor = Color.FromArgb(213, 218, 223);
+            txtComplemento.Location = new Point(46, 259);
+            txtComplemento.Margin = new Padding(4);
+            txtComplemento.Name = "txtComplemento";
+            txtComplemento.PlaceholderForeColor = Color.FromArgb(130, 130, 130);
+            txtComplemento.PlaceholderText = "complemento";
+            txtComplemento.SelectedText = "";
+            txtComplemento.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            txtComplemento.Size = new Size(400, 40);
+            txtComplemento.TabIndex = 17;
             // 
-            // lblNumero
+            // txtNumero
             // 
-            lblNumero.BorderRadius = 10;
-            lblNumero.CustomizableEdges = customizableEdges13;
-            lblNumero.DefaultText = "";
-            lblNumero.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            lblNumero.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            lblNumero.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            lblNumero.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            lblNumero.FocusedState.BorderColor = Color.FromArgb(213, 218, 223);
-            lblNumero.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNumero.ForeColor = Color.FromArgb(130, 130, 130);
-            lblNumero.HoverState.BorderColor = Color.FromArgb(213, 218, 223);
-            lblNumero.Location = new Point(46, 207);
-            lblNumero.Margin = new Padding(4);
-            lblNumero.Name = "lblNumero";
-            lblNumero.PlaceholderForeColor = Color.FromArgb(130, 130, 130);
-            lblNumero.PlaceholderText = "numero";
-            lblNumero.SelectedText = "";
-            lblNumero.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            lblNumero.Size = new Size(400, 40);
-            lblNumero.TabIndex = 18;
+            txtNumero.BorderRadius = 10;
+            txtNumero.CustomizableEdges = customizableEdges13;
+            txtNumero.DefaultText = "";
+            txtNumero.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtNumero.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtNumero.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtNumero.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtNumero.FocusedState.BorderColor = Color.FromArgb(213, 218, 223);
+            txtNumero.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtNumero.ForeColor = Color.FromArgb(130, 130, 130);
+            txtNumero.HoverState.BorderColor = Color.FromArgb(213, 218, 223);
+            txtNumero.Location = new Point(46, 207);
+            txtNumero.Margin = new Padding(4);
+            txtNumero.Name = "txtNumero";
+            txtNumero.PlaceholderForeColor = Color.FromArgb(130, 130, 130);
+            txtNumero.PlaceholderText = "numero";
+            txtNumero.SelectedText = "";
+            txtNumero.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            txtNumero.Size = new Size(400, 40);
+            txtNumero.TabIndex = 18;
             // 
-            // lblCep
+            // txtCep
             // 
-            lblCep.BorderRadius = 10;
-            lblCep.CustomizableEdges = customizableEdges15;
-            lblCep.DefaultText = "";
-            lblCep.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            lblCep.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            lblCep.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            lblCep.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            lblCep.FocusedState.BorderColor = Color.FromArgb(213, 218, 223);
-            lblCep.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCep.ForeColor = Color.FromArgb(130, 130, 130);
-            lblCep.HoverState.BorderColor = Color.FromArgb(213, 218, 223);
-            lblCep.Location = new Point(46, 95);
-            lblCep.Margin = new Padding(4);
-            lblCep.Name = "lblCep";
-            lblCep.PlaceholderForeColor = Color.FromArgb(130, 130, 130);
-            lblCep.PlaceholderText = "cep";
-            lblCep.SelectedText = "";
-            lblCep.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            lblCep.Size = new Size(400, 40);
-            lblCep.TabIndex = 19;
+            txtCep.BorderRadius = 10;
+            txtCep.CustomizableEdges = customizableEdges15;
+            txtCep.DefaultText = "";
+            txtCep.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtCep.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtCep.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtCep.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtCep.FocusedState.BorderColor = Color.FromArgb(213, 218, 223);
+            txtCep.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtCep.ForeColor = Color.FromArgb(130, 130, 130);
+            txtCep.HoverState.BorderColor = Color.FromArgb(213, 218, 223);
+            txtCep.Location = new Point(46, 95);
+            txtCep.Margin = new Padding(4);
+            txtCep.Name = "txtCep";
+            txtCep.PlaceholderForeColor = Color.FromArgb(130, 130, 130);
+            txtCep.PlaceholderText = "cep";
+            txtCep.SelectedText = "";
+            txtCep.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            txtCep.Size = new Size(400, 40);
+            txtCep.TabIndex = 19;
+            txtCep.TextChanged += txtCep_TextChanged;
             // 
-            // lblLogradouro
+            // txtLogradouro
             // 
-            lblLogradouro.BorderRadius = 10;
-            lblLogradouro.CustomizableEdges = customizableEdges17;
-            lblLogradouro.DefaultText = "";
-            lblLogradouro.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            lblLogradouro.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            lblLogradouro.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            lblLogradouro.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            lblLogradouro.Enabled = false;
-            lblLogradouro.FocusedState.BorderColor = Color.FromArgb(213, 218, 223);
-            lblLogradouro.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLogradouro.ForeColor = Color.FromArgb(130, 130, 130);
-            lblLogradouro.HoverState.BorderColor = Color.FromArgb(213, 218, 223);
-            lblLogradouro.Location = new Point(46, 152);
-            lblLogradouro.Margin = new Padding(4);
-            lblLogradouro.Name = "lblLogradouro";
-            lblLogradouro.PlaceholderForeColor = Color.FromArgb(130, 130, 130);
-            lblLogradouro.PlaceholderText = "logradouro";
-            lblLogradouro.SelectedText = "";
-            lblLogradouro.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            lblLogradouro.Size = new Size(400, 40);
-            lblLogradouro.TabIndex = 20;
+            txtLogradouro.BorderRadius = 10;
+            txtLogradouro.CustomizableEdges = customizableEdges17;
+            txtLogradouro.DefaultText = "";
+            txtLogradouro.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtLogradouro.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtLogradouro.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtLogradouro.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtLogradouro.Enabled = false;
+            txtLogradouro.FocusedState.BorderColor = Color.FromArgb(213, 218, 223);
+            txtLogradouro.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtLogradouro.ForeColor = Color.FromArgb(130, 130, 130);
+            txtLogradouro.HoverState.BorderColor = Color.FromArgb(213, 218, 223);
+            txtLogradouro.Location = new Point(46, 152);
+            txtLogradouro.Margin = new Padding(4);
+            txtLogradouro.Name = "txtLogradouro";
+            txtLogradouro.PlaceholderForeColor = Color.FromArgb(130, 130, 130);
+            txtLogradouro.PlaceholderText = "logradouro";
+            txtLogradouro.SelectedText = "";
+            txtLogradouro.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            txtLogradouro.Size = new Size(400, 40);
+            txtLogradouro.TabIndex = 20;
             // 
             // lblAjudaEndereco
             // 
@@ -420,28 +422,28 @@
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.Click += btnCadastrar_Click;
             // 
-            // guna2TextBox1
+            // txtSenhaCadastro
             // 
-            guna2TextBox1.BorderRadius = 10;
-            guna2TextBox1.CustomizableEdges = customizableEdges25;
-            guna2TextBox1.DefaultText = "";
-            guna2TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox1.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.FocusedState.BorderColor = Color.FromArgb(213, 218, 223);
-            guna2TextBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2TextBox1.ForeColor = Color.FromArgb(130, 130, 130);
-            guna2TextBox1.HoverState.BorderColor = Color.FromArgb(213, 218, 223);
-            guna2TextBox1.Location = new Point(46, 207);
-            guna2TextBox1.Margin = new Padding(4);
-            guna2TextBox1.Name = "guna2TextBox1";
-            guna2TextBox1.PlaceholderForeColor = Color.FromArgb(130, 130, 130);
-            guna2TextBox1.PlaceholderText = "senha";
-            guna2TextBox1.SelectedText = "";
-            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            guna2TextBox1.Size = new Size(400, 40);
-            guna2TextBox1.TabIndex = 11;
+            txtSenhaCadastro.BorderRadius = 10;
+            txtSenhaCadastro.CustomizableEdges = customizableEdges25;
+            txtSenhaCadastro.DefaultText = "";
+            txtSenhaCadastro.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtSenhaCadastro.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtSenhaCadastro.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtSenhaCadastro.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtSenhaCadastro.FocusedState.BorderColor = Color.FromArgb(213, 218, 223);
+            txtSenhaCadastro.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtSenhaCadastro.ForeColor = Color.FromArgb(130, 130, 130);
+            txtSenhaCadastro.HoverState.BorderColor = Color.FromArgb(213, 218, 223);
+            txtSenhaCadastro.Location = new Point(46, 207);
+            txtSenhaCadastro.Margin = new Padding(4);
+            txtSenhaCadastro.Name = "txtSenhaCadastro";
+            txtSenhaCadastro.PlaceholderForeColor = Color.FromArgb(130, 130, 130);
+            txtSenhaCadastro.PlaceholderText = "senha";
+            txtSenhaCadastro.SelectedText = "";
+            txtSenhaCadastro.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            txtSenhaCadastro.Size = new Size(400, 40);
+            txtSenhaCadastro.TabIndex = 11;
             // 
             // txtNome
             // 
@@ -466,28 +468,28 @@
             txtNome.Size = new Size(400, 40);
             txtNome.TabIndex = 12;
             // 
-            // guna2TextBox2
+            // txtEmailCadastro
             // 
-            guna2TextBox2.BorderRadius = 10;
-            guna2TextBox2.CustomizableEdges = customizableEdges29;
-            guna2TextBox2.DefaultText = "";
-            guna2TextBox2.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox2.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox2.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox2.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox2.FocusedState.BorderColor = Color.FromArgb(213, 218, 223);
-            guna2TextBox2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2TextBox2.ForeColor = Color.FromArgb(130, 130, 130);
-            guna2TextBox2.HoverState.BorderColor = Color.FromArgb(213, 218, 223);
-            guna2TextBox2.Location = new Point(46, 152);
-            guna2TextBox2.Margin = new Padding(4);
-            guna2TextBox2.Name = "guna2TextBox2";
-            guna2TextBox2.PlaceholderForeColor = Color.FromArgb(130, 130, 130);
-            guna2TextBox2.PlaceholderText = "seu.email@email.com";
-            guna2TextBox2.SelectedText = "";
-            guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges30;
-            guna2TextBox2.Size = new Size(400, 40);
-            guna2TextBox2.TabIndex = 13;
+            txtEmailCadastro.BorderRadius = 10;
+            txtEmailCadastro.CustomizableEdges = customizableEdges29;
+            txtEmailCadastro.DefaultText = "";
+            txtEmailCadastro.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtEmailCadastro.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtEmailCadastro.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtEmailCadastro.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtEmailCadastro.FocusedState.BorderColor = Color.FromArgb(213, 218, 223);
+            txtEmailCadastro.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtEmailCadastro.ForeColor = Color.FromArgb(130, 130, 130);
+            txtEmailCadastro.HoverState.BorderColor = Color.FromArgb(213, 218, 223);
+            txtEmailCadastro.Location = new Point(46, 152);
+            txtEmailCadastro.Margin = new Padding(4);
+            txtEmailCadastro.Name = "txtEmailCadastro";
+            txtEmailCadastro.PlaceholderForeColor = Color.FromArgb(130, 130, 130);
+            txtEmailCadastro.PlaceholderText = "seu.email@email.com";
+            txtEmailCadastro.SelectedText = "";
+            txtEmailCadastro.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            txtEmailCadastro.Size = new Size(400, 40);
+            txtEmailCadastro.TabIndex = 13;
             // 
             // guna2HtmlLabel2
             // 
@@ -551,17 +553,17 @@
         private Guna.UI2.WinForms.Guna2Panel pnlCadastro;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpDataNascimento;
         private Guna.UI2.WinForms.Guna2Button btnCadastrar;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtSenhaCadastro;
         private Guna.UI2.WinForms.Guna2TextBox txtNome;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI2.WinForms.Guna2TextBox txtEmailCadastro;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2Panel pnlEndereco;
         private Guna.UI2.WinForms.Guna2Button btnFinalizar;
-        private Guna.UI2.WinForms.Guna2TextBox lblComplemento;
-        private Guna.UI2.WinForms.Guna2TextBox lblNumero;
-        private Guna.UI2.WinForms.Guna2TextBox lblCep;
-        private Guna.UI2.WinForms.Guna2TextBox lblLogradouro;
+        private Guna.UI2.WinForms.Guna2TextBox txtComplemento;
+        private Guna.UI2.WinForms.Guna2TextBox txtNumero;
+        private Guna.UI2.WinForms.Guna2TextBox txtCep;
+        private Guna.UI2.WinForms.Guna2TextBox txtLogradouro;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblAjudaEndereco;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblEndereco;
     }
