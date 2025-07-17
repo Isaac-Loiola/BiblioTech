@@ -105,7 +105,7 @@ namespace BiblioTechClass
             Usuario usuario = new();
 
             var cmd = Banco.Abrir();
-            cmd.CommandText = $"select * from usuarios where email = {email} and senha = {senha}";
+            cmd.CommandText = $"select * from usuarios where email = '{email}' and senha = '{senha}'";
             var dr = cmd.ExecuteReader();
             if (dr.Read())
             {
