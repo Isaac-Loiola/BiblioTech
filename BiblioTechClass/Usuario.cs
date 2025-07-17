@@ -10,12 +10,12 @@ namespace BiblioTechClass
     public class Usuario
     {
         
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public string Email { get; set; }
-        public string Senha { get; set; }
-        public DateTime DataNascimento { get; set; }
-        public int Status { get; set; }
+        public int? Id { get; set; }
+        public string? Nome { get; set; }
+        public string? Email { get; set; }
+        public string? Senha { get; set; }
+        public DateTime? DataNascimento { get; set; }
+        public int? Status { get; set; }
         public Usuario()
         {
 
@@ -105,9 +105,9 @@ namespace BiblioTechClass
             Usuario usuario = new();
 
             var cmd = Banco.Abrir();
-            cmd.CommandText = $"select * from usuarios where email = {email} and senha = {senha}";
+            cmd.CommandText = $"select * from usuarios where email = '{email}' and senha = '{senha}'";
             var dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (dr.Read())
             {
                 usuario = new
                     (

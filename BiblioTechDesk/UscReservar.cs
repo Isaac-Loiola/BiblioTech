@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BiblioTechClass;
 using Guna.UI2.WinForms;
+using System.Security.Cryptography.X509Certificates;
 
 namespace BiblioTechDesk
 {
@@ -17,6 +18,14 @@ namespace BiblioTechDesk
         public UscReservar()
         {
             InitializeComponent();
+        }
+        
+        private void ExibirDetalhesDoLivro()
+        {
+            this.Controls.Clear();
+            UscDetalheLivro uscDetalheLivro = new();
+            uscDetalheLivro.Dock = DockStyle.Fill;
+            this.Controls.Add(uscDetalheLivro);
         }
 
         private void UscReservar_Load(object sender, EventArgs e)
@@ -54,6 +63,30 @@ namespace BiblioTechDesk
                 LblDescricao.Font = new Font("Segoe UI Semibold", 12, FontStyle.Bold);
                 LblDescricao.Location = new Point(3, 328);
                 LblDescricao.Text = livro.Descricao;
+
+                painel.MouseEnter += ( sender,  e) =>
+                {
+                    LblNome.MouseClick += (sender, e) =>
+                    {
+                        ExibirDetalhesDoLivro();
+                    };
+
+                    Picbox.MouseClick += (sender, e) =>
+                    {
+                        ExibirDetalhesDoLivro();
+                    };
+
+                    painel.MouseClick += (sender, e) =>
+                    {
+                        ExibirDetalhesDoLivro();
+                    };
+
+                    LblDescricao.MouseClick += (sender, e) =>
+                    {
+                        ExibirDetalhesDoLivro();
+                    };
+
+                };
 
                 painel.Controls.Add(Picbox);
                 painel.Controls.Add(LblDescricao);
