@@ -30,19 +30,19 @@
         {
             flpDestaque = new FlowLayoutPanel();
             lblAjuda = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            lblDestaque = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblAdquiridos = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblsubtitulo = new Guna.UI2.WinForms.Guna2HtmlLabel();
             flpMaisAdquiridos = new FlowLayoutPanel();
+            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             SuspendLayout();
             // 
             // flpDestaque
             // 
-            flpDestaque.Location = new Point(55, 134);
+            flpDestaque.Location = new Point(0, 132);
             flpDestaque.Name = "flpDestaque";
-            flpDestaque.Padding = new Padding(10);
-            flpDestaque.Size = new Size(939, 386);
+            flpDestaque.Size = new Size(1054, 401);
             flpDestaque.TabIndex = 0;
+            flpDestaque.Paint += flpDestaque_Paint;
             // 
             // lblAjuda
             // 
@@ -50,29 +50,18 @@
             lblAjuda.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             lblAjuda.ForeColor = Color.FromArgb(69, 69, 69);
             lblAjuda.IsSelectionEnabled = false;
-            lblAjuda.Location = new Point(55, 109);
+            lblAjuda.Location = new Point(6, 107);
             lblAjuda.Name = "lblAjuda";
             lblAjuda.Size = new Size(161, 19);
             lblAjuda.TabIndex = 3;
             lblAjuda.Text = "Utilize o  email cadastrado.";
-            // 
-            // lblDestaque
-            // 
-            lblDestaque.BackColor = Color.Transparent;
-            lblDestaque.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Bold);
-            lblDestaque.IsSelectionEnabled = false;
-            lblDestaque.Location = new Point(55, 64);
-            lblDestaque.Name = "lblDestaque";
-            lblDestaque.Size = new Size(118, 39);
-            lblDestaque.TabIndex = 4;
-            lblDestaque.Text = "Destaque";
             // 
             // lblAdquiridos
             // 
             lblAdquiridos.BackColor = Color.Transparent;
             lblAdquiridos.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Bold);
             lblAdquiridos.IsSelectionEnabled = false;
-            lblAdquiridos.Location = new Point(55, 539);
+            lblAdquiridos.Location = new Point(6, 541);
             lblAdquiridos.Name = "lblAdquiridos";
             lblAdquiridos.Size = new Size(202, 39);
             lblAdquiridos.TabIndex = 4;
@@ -84,7 +73,7 @@
             lblsubtitulo.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             lblsubtitulo.ForeColor = Color.FromArgb(69, 69, 69);
             lblsubtitulo.IsSelectionEnabled = false;
-            lblsubtitulo.Location = new Point(55, 584);
+            lblsubtitulo.Location = new Point(6, 586);
             lblsubtitulo.Name = "lblsubtitulo";
             lblsubtitulo.Size = new Size(173, 19);
             lblsubtitulo.TabIndex = 3;
@@ -92,22 +81,34 @@
             // 
             // flpMaisAdquiridos
             // 
-            flpMaisAdquiridos.Location = new Point(55, 609);
+            flpMaisAdquiridos.Location = new Point(0, 609);
             flpMaisAdquiridos.Name = "flpMaisAdquiridos";
             flpMaisAdquiridos.Padding = new Padding(10);
-            flpMaisAdquiridos.Size = new Size(939, 232);
+            flpMaisAdquiridos.Size = new Size(1054, 232);
             flpMaisAdquiridos.TabIndex = 5;
+            // 
+            // guna2HtmlLabel1
+            // 
+            guna2HtmlLabel1.BackColor = Color.Transparent;
+            guna2HtmlLabel1.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Bold);
+            guna2HtmlLabel1.ForeColor = Color.Black;
+            guna2HtmlLabel1.IsSelectionEnabled = false;
+            guna2HtmlLabel1.Location = new Point(6, 62);
+            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            guna2HtmlLabel1.Size = new Size(118, 39);
+            guna2HtmlLabel1.TabIndex = 3;
+            guna2HtmlLabel1.Text = "Destaque";
             // 
             // UscInicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            Controls.Add(flpMaisAdquiridos);
             Controls.Add(lblsubtitulo);
-            Controls.Add(lblAjuda);
             Controls.Add(lblAdquiridos);
-            Controls.Add(lblDestaque);
+            Controls.Add(guna2HtmlLabel1);
+            Controls.Add(lblAjuda);
+            Controls.Add(flpMaisAdquiridos);
             Controls.Add(flpDestaque);
             Name = "UscInicio";
             Size = new Size(1054, 854);
@@ -120,9 +121,9 @@
 
         private FlowLayoutPanel flpDestaque;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblAjuda;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblDestaque;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblAdquiridos;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblsubtitulo;
         private FlowLayoutPanel flpMaisAdquiridos;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }
 }

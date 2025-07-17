@@ -148,7 +148,7 @@ namespace BiblioTechClass
             var cmd = Banco.Abrir();
             cmd.CommandText = $"select * from livros limit 4";
             var dr = cmd.ExecuteReader();
-            if (dr.Read())
+            while (dr.Read())
             {
                 livrosDestaque.Add
                     (
