@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BiblioTechClass;
 using Guna.UI2.WinForms;
+using System.Security.Cryptography.X509Certificates;
 
 namespace BiblioTechDesk
 {
@@ -18,7 +19,7 @@ namespace BiblioTechDesk
         {
             InitializeComponent();
         }
-
+        
         private void UscReservar_Load(object sender, EventArgs e)
         {
             var livros = Livro.ObterLista();
@@ -54,6 +55,11 @@ namespace BiblioTechDesk
                 LblDescricao.Font = new Font("Segoe UI Semibold", 12, FontStyle.Bold);
                 LblDescricao.Location = new Point(3, 328);
                 LblDescricao.Text = livro.Descricao;
+
+                painel.Click += ( sender,  e) =>
+                {
+
+                };
 
                 painel.Controls.Add(Picbox);
                 painel.Controls.Add(LblDescricao);

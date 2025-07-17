@@ -11,7 +11,7 @@ namespace BiblioTechDesk
         {
 
         }
-        private void AssociarUserControla(UserControl userControl)
+        public void AssociarUserControla(UserControl userControl)
         {
             pnlInicio.Controls.Clear();
             userControl.Dock = DockStyle.Fill;
