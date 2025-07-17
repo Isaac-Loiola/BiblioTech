@@ -175,14 +175,14 @@ namespace BiblioTechClass
         // TO DO!!
         public static List<Livro> ObterLivrosMaisAdquiridos()
         {
-            List<Livro> livrosDestaque = new();
+            List<Livro> livrosMaisAdquiridos = new();
 
             var cmd = Banco.Abrir();
             cmd.CommandText = $"select * from livros limit 5";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                livrosDestaque.Add
+                livrosMaisAdquiridos.Add
                     (
                         new
                         (
@@ -202,7 +202,7 @@ namespace BiblioTechClass
             dr.Close();
             cmd.Connection.Close();
 
-            return livrosDestaque;
+            return livrosMaisAdquiridos;
         }
     }
 }
