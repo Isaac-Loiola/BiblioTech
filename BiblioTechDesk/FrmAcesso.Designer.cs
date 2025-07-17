@@ -225,7 +225,7 @@
             pnlCadastro.Controls.Add(guna2HtmlLabel2);
             pnlCadastro.Controls.Add(guna2HtmlLabel3);
             pnlCadastro.CustomizableEdges = customizableEdges31;
-            pnlCadastro.Location = new Point(486, 180);
+            pnlCadastro.Location = new Point(486, 182);
             pnlCadastro.Name = "pnlCadastro";
             pnlCadastro.ShadowDecoration.CustomizableEdges = customizableEdges32;
             pnlCadastro.Size = new Size(493, 408);
@@ -242,7 +242,7 @@
             pnlEndereco.Controls.Add(lblAjudaEndereco);
             pnlEndereco.Controls.Add(lblEndereco);
             pnlEndereco.CustomizableEdges = customizableEdges19;
-            pnlEndereco.Location = new Point(0, 2);
+            pnlEndereco.Location = new Point(0, 1);
             pnlEndereco.Name = "pnlEndereco";
             pnlEndereco.ShadowDecoration.CustomizableEdges = customizableEdges20;
             pnlEndereco.Size = new Size(493, 408);
@@ -511,7 +511,7 @@
             guna2HtmlLabel3.TabIndex = 10;
             guna2HtmlLabel3.Text = "Cadastro";
             // 
-            // FrmLogin
+            // FrmAcesso
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -527,7 +527,7 @@
             Controls.Add(txtSenha);
             Controls.Add(txtEmail);
             Controls.Add(guna2PictureBox1);
-            Name = "FrmLogin";
+            Name = "FrmAcesso";
             StartPosition = FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             pnlCadastro.ResumeLayout(false);
