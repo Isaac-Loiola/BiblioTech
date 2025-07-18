@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BiblioTechClass;
 using Guna.UI2.WinForms.Enums;
+using Guna.UI2.WinForms;
 
 namespace BiblioTechDesk
 {
@@ -48,7 +49,30 @@ namespace BiblioTechDesk
 
         private void btnReservar_Click(object sender, EventArgs e)
         {
-          
+            pnlReserva.Visible = true;
+            pnlReserva.Dock = DockStyle.Fill;
+            lblNomeLivroReserva.Text = lblNomeLivro.Text;
+
+            var hoje = DateTime.Today;
+            dtpDevolucao.MinDate = hoje.AddDays( + 1);
+            dtpDevolucao.MaxDate = hoje.AddDays( + 31);
+
+           
+        }
+
+        private void btnFinalizarReserva_Click(object sender, EventArgs e)
+        {
+            Reserva reserva = new(Program.UsuarioLogado, Livro.ObterPorId(idDoLivro), dtpDevolucao.Value);
+            reserva.Inserir();
+
+            if(reserva.Id > 0)
+            {
+                var frmExecucao = Application.OpenForms["FrmPrincipal"] as FrmPrincipal;
+
+                frmExecucao.ExibirNotificacao(lblNomeLivroReserva.Text);
+
+                pnlReserva.Visible = false;
+            }
         }
     }
 }

@@ -33,6 +33,16 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             picCapaLivro = new Guna.UI2.WinForms.Guna2PictureBox();
             lblNomeLivro = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblSobreLivro = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -52,8 +62,19 @@
             lblValorDescricao = new Guna.UI2.WinForms.Guna2HtmlLabel();
             picDivisao = new PictureBox();
             mdConclusao = new Guna.UI2.WinForms.Guna2MessageDialog();
+            pnlReserva = new Guna.UI2.WinForms.Guna2Panel();
+            guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            btnFinalizarReserva = new Guna.UI2.WinForms.Guna2Button();
+            dtpReserva = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            lblDataReserva = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            dtpDevolucao = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblNomeLivroReserva = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblReserva = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)picCapaLivro).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picDivisao).BeginInit();
+            pnlReserva.SuspendLayout();
+            guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
             // picCapaLivro
@@ -289,11 +310,147 @@
             mdConclusao.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
             mdConclusao.Text = "";
             // 
+            // pnlReserva
+            // 
+            pnlReserva.Controls.Add(guna2Panel1);
+            pnlReserva.Controls.Add(lblReserva);
+            pnlReserva.CustomizableEdges = customizableEdges13;
+            pnlReserva.Dock = DockStyle.Fill;
+            pnlReserva.Location = new Point(0, 0);
+            pnlReserva.Name = "pnlReserva";
+            pnlReserva.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            pnlReserva.Size = new Size(1054, 854);
+            pnlReserva.TabIndex = 29;
+            pnlReserva.Visible = false;
+            // 
+            // guna2Panel1
+            // 
+            guna2Panel1.BorderColor = Color.FromArgb(213, 218, 223);
+            guna2Panel1.BorderRadius = 10;
+            guna2Panel1.BorderThickness = 1;
+            guna2Panel1.Controls.Add(btnFinalizarReserva);
+            guna2Panel1.Controls.Add(dtpReserva);
+            guna2Panel1.Controls.Add(lblDataReserva);
+            guna2Panel1.Controls.Add(dtpDevolucao);
+            guna2Panel1.Controls.Add(guna2HtmlLabel1);
+            guna2Panel1.Controls.Add(lblNomeLivroReserva);
+            guna2Panel1.CustomizableEdges = customizableEdges11;
+            guna2Panel1.Location = new Point(218, 253);
+            guna2Panel1.Name = "guna2Panel1";
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2Panel1.Size = new Size(618, 348);
+            guna2Panel1.TabIndex = 10;
+            // 
+            // btnFinalizarReserva
+            // 
+            btnFinalizarReserva.BorderRadius = 10;
+            btnFinalizarReserva.CustomizableEdges = customizableEdges5;
+            btnFinalizarReserva.DisabledState.BorderColor = Color.DarkGray;
+            btnFinalizarReserva.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnFinalizarReserva.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnFinalizarReserva.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnFinalizarReserva.FillColor = Color.Black;
+            btnFinalizarReserva.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            btnFinalizarReserva.ForeColor = Color.White;
+            btnFinalizarReserva.Location = new Point(215, 264);
+            btnFinalizarReserva.Name = "btnFinalizarReserva";
+            btnFinalizarReserva.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnFinalizarReserva.Size = new Size(189, 29);
+            btnFinalizarReserva.TabIndex = 23;
+            btnFinalizarReserva.Text = "Reservar";
+            btnFinalizarReserva.Click += btnFinalizarReserva_Click;
+            // 
+            // dtpReserva
+            // 
+            dtpReserva.BackColor = Color.White;
+            dtpReserva.BorderRadius = 10;
+            dtpReserva.Checked = true;
+            dtpReserva.CustomizableEdges = customizableEdges7;
+            dtpReserva.Enabled = false;
+            dtpReserva.FillColor = Color.White;
+            dtpReserva.Font = new Font("Segoe UI", 9F);
+            dtpReserva.Format = DateTimePickerFormat.Long;
+            dtpReserva.Location = new Point(149, 105);
+            dtpReserva.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            dtpReserva.MinDate = new DateTime(2025, 7, 18, 0, 0, 0, 0);
+            dtpReserva.Name = "dtpReserva";
+            dtpReserva.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            dtpReserva.Size = new Size(324, 27);
+            dtpReserva.TabIndex = 16;
+            dtpReserva.Value = new DateTime(2025, 7, 18, 13, 44, 14, 0);
+            // 
+            // lblDataReserva
+            // 
+            lblDataReserva.BackColor = Color.Transparent;
+            lblDataReserva.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            lblDataReserva.ForeColor = Color.Black;
+            lblDataReserva.IsSelectionEnabled = false;
+            lblDataReserva.Location = new Point(149, 79);
+            lblDataReserva.Name = "lblDataReserva";
+            lblDataReserva.Size = new Size(120, 23);
+            lblDataReserva.TabIndex = 8;
+            lblDataReserva.Text = "Data de Reserva";
+            // 
+            // dtpDevolucao
+            // 
+            dtpDevolucao.BackColor = Color.White;
+            dtpDevolucao.BorderRadius = 10;
+            dtpDevolucao.Checked = true;
+            dtpDevolucao.CustomizableEdges = customizableEdges9;
+            dtpDevolucao.FillColor = Color.White;
+            dtpDevolucao.Font = new Font("Segoe UI", 9F);
+            dtpDevolucao.Format = DateTimePickerFormat.Long;
+            dtpDevolucao.Location = new Point(149, 201);
+            dtpDevolucao.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            dtpDevolucao.MinDate = new DateTime(2025, 7, 18, 0, 0, 0, 0);
+            dtpDevolucao.Name = "dtpDevolucao";
+            dtpDevolucao.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            dtpDevolucao.Size = new Size(324, 27);
+            dtpDevolucao.TabIndex = 16;
+            dtpDevolucao.Value = new DateTime(2025, 7, 18, 13, 44, 14, 0);
+            // 
+            // guna2HtmlLabel1
+            // 
+            guna2HtmlLabel1.BackColor = Color.Transparent;
+            guna2HtmlLabel1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            guna2HtmlLabel1.ForeColor = Color.Black;
+            guna2HtmlLabel1.IsSelectionEnabled = false;
+            guna2HtmlLabel1.Location = new Point(149, 175);
+            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            guna2HtmlLabel1.Size = new Size(140, 23);
+            guna2HtmlLabel1.TabIndex = 8;
+            guna2HtmlLabel1.Text = "Data de Devolução";
+            // 
+            // lblNomeLivroReserva
+            // 
+            lblNomeLivroReserva.BackColor = Color.Transparent;
+            lblNomeLivroReserva.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            lblNomeLivroReserva.ForeColor = Color.Black;
+            lblNomeLivroReserva.IsSelectionEnabled = false;
+            lblNomeLivroReserva.Location = new Point(254, 26);
+            lblNomeLivroReserva.Name = "lblNomeLivroReserva";
+            lblNomeLivroReserva.Size = new Size(112, 23);
+            lblNomeLivroReserva.TabIndex = 8;
+            lblNomeLivroReserva.Text = "Nome do Livro";
+            // 
+            // lblReserva
+            // 
+            lblReserva.BackColor = Color.Transparent;
+            lblReserva.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Bold);
+            lblReserva.ForeColor = Color.Black;
+            lblReserva.IsSelectionEnabled = false;
+            lblReserva.Location = new Point(3, 12);
+            lblReserva.Name = "lblReserva";
+            lblReserva.Size = new Size(175, 39);
+            lblReserva.TabIndex = 9;
+            lblReserva.Text = "Reservar Livro";
+            // 
             // UscDetalheLivro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(pnlReserva);
             Controls.Add(picDivisao);
             Controls.Add(lblValorDimensao);
             Controls.Add(lblDataPublicacao);
@@ -317,6 +474,10 @@
             Load += UscDetalheLivro_Load;
             ((System.ComponentModel.ISupportInitialize)picCapaLivro).EndInit();
             ((System.ComponentModel.ISupportInitialize)picDivisao).EndInit();
+            pnlReserva.ResumeLayout(false);
+            pnlReserva.PerformLayout();
+            guna2Panel1.ResumeLayout(false);
+            guna2Panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -345,5 +506,14 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblValorDescricao;
         private PictureBox picDivisao;
         private Guna.UI2.WinForms.Guna2MessageDialog mdConclusao;
+        private Guna.UI2.WinForms.Guna2Panel pnlReserva;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblReserva;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblNomeLivroReserva;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpReserva;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblDataReserva;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpDevolucao;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2Button btnFinalizarReserva;
     }
 }
