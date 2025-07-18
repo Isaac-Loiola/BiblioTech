@@ -50,7 +50,9 @@
             lblDataPublicacao = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblValorDimensao = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblValorDescricao = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            picDivisao = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)picCapaLivro).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picDivisao).BeginInit();
             SuspendLayout();
             // 
             // picCapaLivro
@@ -103,10 +105,10 @@
             btnReservar.FillColor = Color.Black;
             btnReservar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             btnReservar.ForeColor = Color.White;
-            btnReservar.Location = new Point(3, 622);
+            btnReservar.Location = new Point(41, 622);
             btnReservar.Name = "btnReservar";
             btnReservar.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnReservar.Size = new Size(274, 29);
+            btnReservar.Size = new Size(189, 29);
             btnReservar.TabIndex = 22;
             btnReservar.Text = "Reservar";
             // 
@@ -261,17 +263,27 @@
             lblValorDescricao.ForeColor = Color.FromArgb(69, 69, 69);
             lblValorDescricao.IsSelectionEnabled = false;
             lblValorDescricao.Location = new Point(417, 146);
-            lblValorDescricao.MaximumSize = new Size(520, 385);
+            lblValorDescricao.MaximumSize = new Size(590, 385);
             lblValorDescricao.Name = "lblValorDescricao";
             lblValorDescricao.Size = new Size(106, 22);
             lblValorDescricao.TabIndex = 26;
             lblValorDescricao.Text = "descrição aqui!";
+            // 
+            // picDivisao
+            // 
+            picDivisao.Image = (Image)resources.GetObject("picDivisao.Image");
+            picDivisao.Location = new Point(417, 506);
+            picDivisao.Name = "picDivisao";
+            picDivisao.Size = new Size(590, 5);
+            picDivisao.TabIndex = 28;
+            picDivisao.TabStop = false;
             // 
             // UscDetalheLivro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(picDivisao);
             Controls.Add(lblValorDimensao);
             Controls.Add(lblDataPublicacao);
             Controls.Add(lblPublicacao);
@@ -293,6 +305,7 @@
             Size = new Size(1054, 854);
             Load += UscDetalheLivro_Load;
             ((System.ComponentModel.ISupportInitialize)picCapaLivro).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picDivisao).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -319,5 +332,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblDataPublicacao;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblValorDimensao;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblValorDescricao;
+        private PictureBox picDivisao;
     }
 }
