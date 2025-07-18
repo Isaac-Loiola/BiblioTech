@@ -97,5 +97,10 @@ namespace BiblioTechDesk
                 MessageBox.Show("Email ou senha incorreto!");
             }
         }
+
+        private void FrmAcesso_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

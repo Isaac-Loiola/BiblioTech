@@ -20,12 +20,15 @@ namespace BiblioTechDesk
             InitializeComponent();
         }
         
-        private void ExibirDetalhesDoLivro()
+        private void ExibirDetalhesDoLivro(int idLivro)
         {
+            UscDetalheLivro.idDoLivro = idLivro;
+
             this.Controls.Clear();
             UscDetalheLivro uscDetalheLivro = new();
             uscDetalheLivro.Dock = DockStyle.Fill;
             this.Controls.Add(uscDetalheLivro);
+
         }
 
         private void UscReservar_Load(object sender, EventArgs e)
@@ -64,26 +67,36 @@ namespace BiblioTechDesk
                 LblDescricao.Location = new Point(3, 328);
                 LblDescricao.Text = livro.Descricao;
 
+                Guna2HtmlLabel lblId = new();
+                lblId.ForeColor = Color.Black;
+                lblId.Font = new Font("Segoe UI Semibold", 12, FontStyle.Bold);
+                lblId.Location = new Point(0,350);
+                lblId.Visible = false;
+                lblId.Text = livro.Id.ToString();
+
                 painel.MouseEnter += ( sender,  e) =>
                 {
                     LblNome.MouseClick += (sender, e) =>
                     {
-                        ExibirDetalhesDoLivro();
+                        ExibirDetalhesDoLivro(Convert.ToInt32(lblId.Text));
                     };
 
                     Picbox.MouseClick += (sender, e) =>
                     {
-                        ExibirDetalhesDoLivro();
+                        ExibirDetalhesDoLivro(Convert.ToInt32(lblId.Text));
+
                     };
 
                     painel.MouseClick += (sender, e) =>
                     {
-                        ExibirDetalhesDoLivro();
+                        ExibirDetalhesDoLivro(Convert.ToInt32(lblId.Text));
+
                     };
 
                     LblDescricao.MouseClick += (sender, e) =>
                     {
-                        ExibirDetalhesDoLivro();
+                        ExibirDetalhesDoLivro(Convert.ToInt32(lblId.Text));
+
                     };
 
                 };
@@ -91,6 +104,7 @@ namespace BiblioTechDesk
                 painel.Controls.Add(Picbox);
                 painel.Controls.Add(LblDescricao);
                 painel.Controls.Add(LblNome);
+                painel.Controls.Add(lblId);
 
                 flpLivros.Controls.Add(painel);
             }

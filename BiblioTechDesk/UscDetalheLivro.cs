@@ -16,11 +16,33 @@ namespace BiblioTechDesk
         public UscDetalheLivro()
         {
             InitializeComponent();
+
         }
+
+        public static int idDoLivro;
 
         private void UscDetalheLivro_Load(object sender, EventArgs e)
         {
-            Livro.ObterPorId();
+            var livro = Livro.ObterPorId(idDoLivro);
+
+            //Exibição da imagem do livro!
+            using (MemoryStream ms = new(livro.Imagem))
+            {
+                picCapaLivro.Image = Image.FromStream(ms);
+            }
+
+            lblValorDescricao.Text = livro.Descricao;
+            lblExibicaoNomeAutor.Text = livro.Autor.Nome;
+            lblNomeEditora.Text = livro.Editora.Nome;
+            lblNomeAutor.Text = livro.Autor.Nome;
+            lblValorDimensao.Text = livro.Dimensao;
+            lblValorDimensao.Text = livro.Genero.Nome;
+            lblDataPublicacao.Text = Convert.ToString(livro.DataPublicacao);
+        }
+
+        private void lblSobreLivro_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

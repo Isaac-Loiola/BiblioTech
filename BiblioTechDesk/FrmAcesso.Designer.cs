@@ -531,6 +531,7 @@
             Controls.Add(guna2PictureBox1);
             Name = "FrmAcesso";
             StartPosition = FormStartPosition.CenterScreen;
+            Load += FrmAcesso_Load;
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             pnlCadastro.ResumeLayout(false);
             pnlCadastro.PerformLayout();
