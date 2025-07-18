@@ -19,6 +19,16 @@ namespace BiblioTechDesk
             mdConcluido.Show($"A reserva do livro {nomeLivro} foi concluída com sucesso, {Program.UsuarioLogado.Nome}!", "Tudo certo!");
         }
 
+        public void ExibirNotificacaoCamposObrigatorios()
+        {
+            Guna2MessageDialog mdCamposObrigatorios = new();
+            mdCamposObrigatorios.Style = MessageDialogStyle.Light;
+            mdCamposObrigatorios.Icon = MessageDialogIcon.Warning;
+
+            mdCamposObrigatorios.Parent = this;
+            mdCamposObrigatorios.Caption = "Ops...";
+            mdCamposObrigatorios.Show($"Todos os campos devem ser preenchidos!");
+        }
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             
