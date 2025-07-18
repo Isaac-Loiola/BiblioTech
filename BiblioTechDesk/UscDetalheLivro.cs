@@ -65,6 +65,9 @@ namespace BiblioTechDesk
             Reserva reserva = new(Program.UsuarioLogado, Livro.ObterPorId(idDoLivro), dtpDevolucao.Value);
             reserva.Inserir();
 
+            ControleEstoque controleEstoque = new(Livro.ObterPorId(idDoLivro), "saida", 1);
+            controleEstoque.Adicionar();
+
             if(reserva.Id > 0)
             {
                 var frmExecucao = Application.OpenForms["FrmPrincipal"] as FrmPrincipal;
