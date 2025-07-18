@@ -65,6 +65,9 @@ namespace BiblioTechDesk
                 );
 
             livro.Adicionar();
+
+            ControleEstoque controleEstoque = new(livro, "entrada", Convert.ToInt32(nudQuantidade.Value));
+            controleEstoque.Adicionar();
         }
     }
 }

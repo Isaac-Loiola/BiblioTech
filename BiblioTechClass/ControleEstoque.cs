@@ -41,7 +41,7 @@ namespace BiblioTechClass
         {
             var cmd = Banco.Abrir();
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.CommandText = "sp_controle_estoque";
+            cmd.CommandText = "sp_controle_estoque_insert";
             cmd.Parameters.AddWithValue("spid_livro", Livro.Id);
             cmd.Parameters.AddWithValue("spmovimento", Movimento);
             cmd.Parameters.AddWithValue("spquantidade", Quantidade);
