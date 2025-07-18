@@ -55,7 +55,7 @@
             lblNomeAutor = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblDimensao = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblGenero = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblNomeGenero = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblPublicacao = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblDataPublicacao = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblValorDimensao = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -231,17 +231,17 @@
             lblGenero.TabIndex = 26;
             lblGenero.Text = "Género:";
             // 
-            // guna2HtmlLabel9
+            // lblNomeGenero
             // 
-            guna2HtmlLabel9.BackColor = Color.Transparent;
-            guna2HtmlLabel9.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            guna2HtmlLabel9.ForeColor = Color.FromArgb(69, 69, 69);
-            guna2HtmlLabel9.IsSelectionEnabled = false;
-            guna2HtmlLabel9.Location = new Point(484, 702);
-            guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            guna2HtmlLabel9.Size = new Size(126, 23);
-            guna2HtmlLabel9.TabIndex = 26;
-            guna2HtmlLabel9.Text = "nome do género";
+            lblNomeGenero.BackColor = Color.Transparent;
+            lblNomeGenero.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            lblNomeGenero.ForeColor = Color.FromArgb(69, 69, 69);
+            lblNomeGenero.IsSelectionEnabled = false;
+            lblNomeGenero.Location = new Point(484, 702);
+            lblNomeGenero.Name = "lblNomeGenero";
+            lblNomeGenero.Size = new Size(126, 23);
+            lblNomeGenero.TabIndex = 26;
+            lblNomeGenero.Text = "nome do género";
             // 
             // lblPublicacao
             // 
@@ -455,7 +455,7 @@
             Controls.Add(lblValorDimensao);
             Controls.Add(lblDataPublicacao);
             Controls.Add(lblPublicacao);
-            Controls.Add(guna2HtmlLabel9);
+            Controls.Add(lblNomeGenero);
             Controls.Add(lblGenero);
             Controls.Add(lblDimensao);
             Controls.Add(lblNomeAutor);
@@ -499,7 +499,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblGenero;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblNomeGenero;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblPublicacao;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblDataPublicacao;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblValorDimensao;

@@ -52,19 +52,31 @@ namespace BiblioTechDesk
             picCapaDoLivro.Image.Save(ms, picCapaDoLivro.Image.RawFormat);
             imBytes = ms.ToArray();
 
-            Livro livro = new
-                (
-                    txtNome.Text,
-                    Autor.ObterPorId(Convert.ToInt32(cmbAutor.SelectedValue)),
-                    Editora.ObterPorId(Convert.ToInt32(cmbEditora.SelectedValue)),
-                    txtDescricao.Text,
-                    txtDimensao.Text,
-                    Genero.ObterPorId(Convert.ToInt32(cmbGenero.SelectedValue)),
-                    dtpDataPublicacao.Value,
-                    imBytes
-                );
+            if (txtNome.Text != string.Empty && txtDimensao.Text != string.Empty && txtDescricao.Text != string.Empty && 
+                cmbAutor.Text != string.Empty && cmbEditora.Text != string.Empty && cmbGenero.Text != string.Empty)
+            {
+                Livro livro = new
+                    (
+                        txtNome.Text,
+                        Autor.ObterPorId(Convert.ToInt32(cmbAutor.SelectedValue)),
+                        Editora.ObterPorId(Convert.ToInt32(cmbEditora.SelectedValue)),
+                        txtDescricao.Text,
+                        txtDimensao.Text,
+                        Genero.ObterPorId(Convert.ToInt32(cmbGenero.SelectedValue)),
+                        dtpDataPublicacao.Value,
+                        imBytes
+                    );
 
-            livro.Adicionar();
+                livro.Adicionar();
+
+                ControleEstoque controleEstoque = new(livro, "entrada", Convert.ToInt32(nudQuantidade.Value));
+                controleEstoque.Adicionar();
+            }
+            else
+            {
+                var frmprincipal = Application.OpenForms["FrmPrincipal"] as FrmPrincipal;
+                frmprincipal.ExibirNotificacaoCamposObrigatorios();
+            }
         }
     }
 }

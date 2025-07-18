@@ -38,7 +38,7 @@ namespace BiblioTechDesk
             lblNomeEditora.Text = livro.Editora.Nome;
             lblNomeAutor.Text = livro.Autor.Nome;
             lblValorDimensao.Text = livro.Dimensao;
-            lblValorDimensao.Text = livro.Genero.Nome;
+            lblNomeGenero.Text = livro.Genero.Nome;
             lblDataPublicacao.Text = Convert.ToString(livro.DataPublicacao);
         }
 
@@ -64,6 +64,9 @@ namespace BiblioTechDesk
         {
             Reserva reserva = new(Program.UsuarioLogado, Livro.ObterPorId(idDoLivro), dtpDevolucao.Value);
             reserva.Inserir();
+
+            ControleEstoque controleEstoque = new(Livro.ObterPorId(idDoLivro), "saida", 1);
+            controleEstoque.Adicionar();
 
             if(reserva.Id > 0)
             {
