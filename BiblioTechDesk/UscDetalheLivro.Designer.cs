@@ -34,7 +34,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             picCapaLivro = new Guna.UI2.WinForms.Guna2PictureBox();
-            lblExibicaoNomeAutor = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblNomeLivro = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblSobreLivro = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btnReservar = new Guna.UI2.WinForms.Guna2Button();
             lblDescricao = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -51,6 +51,7 @@
             lblValorDimensao = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblValorDescricao = new Guna.UI2.WinForms.Guna2HtmlLabel();
             picDivisao = new PictureBox();
+            mdConclusao = new Guna.UI2.WinForms.Guna2MessageDialog();
             ((System.ComponentModel.ISupportInitialize)picCapaLivro).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picDivisao).BeginInit();
             SuspendLayout();
@@ -61,7 +62,7 @@
             picCapaLivro.CustomizableEdges = customizableEdges1;
             picCapaLivro.Image = (Image)resources.GetObject("picCapaLivro.Image");
             picCapaLivro.ImageRotate = 0F;
-            picCapaLivro.Location = new Point(3, 201);
+            picCapaLivro.Location = new Point(3, 220);
             picCapaLivro.Name = "picCapaLivro";
             picCapaLivro.ShadowDecoration.CustomizableEdges = customizableEdges2;
             picCapaLivro.Size = new Size(274, 415);
@@ -69,17 +70,17 @@
             picCapaLivro.TabIndex = 0;
             picCapaLivro.TabStop = false;
             // 
-            // lblExibicaoNomeAutor
+            // lblNomeLivro
             // 
-            lblExibicaoNomeAutor.BackColor = Color.Transparent;
-            lblExibicaoNomeAutor.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            lblExibicaoNomeAutor.ForeColor = Color.Black;
-            lblExibicaoNomeAutor.IsSelectionEnabled = false;
-            lblExibicaoNomeAutor.Location = new Point(3, 176);
-            lblExibicaoNomeAutor.Name = "lblExibicaoNomeAutor";
-            lblExibicaoNomeAutor.Size = new Size(118, 23);
-            lblExibicaoNomeAutor.TabIndex = 6;
-            lblExibicaoNomeAutor.Text = "Nome do Autor";
+            lblNomeLivro.BackColor = Color.Transparent;
+            lblNomeLivro.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            lblNomeLivro.ForeColor = Color.Black;
+            lblNomeLivro.IsSelectionEnabled = false;
+            lblNomeLivro.Location = new Point(3, 191);
+            lblNomeLivro.Name = "lblNomeLivro";
+            lblNomeLivro.Size = new Size(112, 23);
+            lblNomeLivro.TabIndex = 6;
+            lblNomeLivro.Text = "Nome do Livro";
             // 
             // lblSobreLivro
             // 
@@ -105,12 +106,13 @@
             btnReservar.FillColor = Color.Black;
             btnReservar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             btnReservar.ForeColor = Color.White;
-            btnReservar.Location = new Point(41, 622);
+            btnReservar.Location = new Point(45, 641);
             btnReservar.Name = "btnReservar";
             btnReservar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnReservar.Size = new Size(189, 29);
             btnReservar.TabIndex = 22;
             btnReservar.Text = "Reservar";
+            btnReservar.Click += btnReservar_Click;
             // 
             // lblDescricao
             // 
@@ -278,6 +280,15 @@
             picDivisao.TabIndex = 28;
             picDivisao.TabStop = false;
             // 
+            // mdConclusao
+            // 
+            mdConclusao.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            mdConclusao.Caption = "";
+            mdConclusao.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            mdConclusao.Parent = null;
+            mdConclusao.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
+            mdConclusao.Text = "";
+            // 
             // UscDetalheLivro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -299,7 +310,7 @@
             Controls.Add(lblDescricao);
             Controls.Add(btnReservar);
             Controls.Add(lblSobreLivro);
-            Controls.Add(lblExibicaoNomeAutor);
+            Controls.Add(lblNomeLivro);
             Controls.Add(picCapaLivro);
             Name = "UscDetalheLivro";
             Size = new Size(1054, 854);
@@ -313,7 +324,7 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2PictureBox picCapaLivro;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblExibicaoNomeAutor;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblNomeLivro;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblSobreLivro;
         private Guna.UI2.WinForms.Guna2Button btnReservar;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblDescricao;
@@ -333,5 +344,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblValorDimensao;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblValorDescricao;
         private PictureBox picDivisao;
+        private Guna.UI2.WinForms.Guna2MessageDialog mdConclusao;
     }
 }

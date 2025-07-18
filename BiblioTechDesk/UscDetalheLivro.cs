@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BiblioTechClass;
+using Guna.UI2.WinForms.Enums;
 
 namespace BiblioTechDesk
 {
@@ -32,7 +33,7 @@ namespace BiblioTechDesk
             }
 
             lblValorDescricao.Text = livro.Descricao;
-            lblExibicaoNomeAutor.Text = livro.Autor.Nome;
+            lblNomeLivro.Text = livro.Nome;
             lblNomeEditora.Text = livro.Editora.Nome;
             lblNomeAutor.Text = livro.Autor.Nome;
             lblValorDimensao.Text = livro.Dimensao;
@@ -43,6 +44,11 @@ namespace BiblioTechDesk
         private void lblSobreLivro_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnReservar_Click(object sender, EventArgs e)
+        {
+          
         }
     }
 }
