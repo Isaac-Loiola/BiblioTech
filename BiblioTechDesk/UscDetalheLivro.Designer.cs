@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UscDetalheLivro));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             picCapaLivro = new Guna.UI2.WinForms.Guna2PictureBox();
             lblNomeLivro = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblSobreLivro = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -55,7 +55,7 @@
             lblNomeAutor = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblDimensao = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblGenero = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblNomeGenero = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblPublicacao = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblDataPublicacao = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblValorDimensao = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -80,12 +80,12 @@
             // picCapaLivro
             // 
             picCapaLivro.BorderRadius = 10;
-            picCapaLivro.CustomizableEdges = customizableEdges1;
+            picCapaLivro.CustomizableEdges = customizableEdges15;
             picCapaLivro.Image = (Image)resources.GetObject("picCapaLivro.Image");
             picCapaLivro.ImageRotate = 0F;
             picCapaLivro.Location = new Point(3, 220);
             picCapaLivro.Name = "picCapaLivro";
-            picCapaLivro.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            picCapaLivro.ShadowDecoration.CustomizableEdges = customizableEdges16;
             picCapaLivro.Size = new Size(274, 415);
             picCapaLivro.SizeMode = PictureBoxSizeMode.StretchImage;
             picCapaLivro.TabIndex = 0;
@@ -119,7 +119,7 @@
             // btnReservar
             // 
             btnReservar.BorderRadius = 10;
-            btnReservar.CustomizableEdges = customizableEdges3;
+            btnReservar.CustomizableEdges = customizableEdges17;
             btnReservar.DisabledState.BorderColor = Color.DarkGray;
             btnReservar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnReservar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -129,7 +129,7 @@
             btnReservar.ForeColor = Color.White;
             btnReservar.Location = new Point(45, 641);
             btnReservar.Name = "btnReservar";
-            btnReservar.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnReservar.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btnReservar.Size = new Size(189, 29);
             btnReservar.TabIndex = 22;
             btnReservar.Text = "Reservar";
@@ -231,17 +231,17 @@
             lblGenero.TabIndex = 26;
             lblGenero.Text = "Género:";
             // 
-            // guna2HtmlLabel9
+            // lblNomeGenero
             // 
-            guna2HtmlLabel9.BackColor = Color.Transparent;
-            guna2HtmlLabel9.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            guna2HtmlLabel9.ForeColor = Color.FromArgb(69, 69, 69);
-            guna2HtmlLabel9.IsSelectionEnabled = false;
-            guna2HtmlLabel9.Location = new Point(484, 702);
-            guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            guna2HtmlLabel9.Size = new Size(126, 23);
-            guna2HtmlLabel9.TabIndex = 26;
-            guna2HtmlLabel9.Text = "nome do género";
+            lblNomeGenero.BackColor = Color.Transparent;
+            lblNomeGenero.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            lblNomeGenero.ForeColor = Color.FromArgb(69, 69, 69);
+            lblNomeGenero.IsSelectionEnabled = false;
+            lblNomeGenero.Location = new Point(484, 702);
+            lblNomeGenero.Name = "lblNomeGenero";
+            lblNomeGenero.Size = new Size(126, 23);
+            lblNomeGenero.TabIndex = 26;
+            lblNomeGenero.Text = "nome do género";
             // 
             // lblPublicacao
             // 
@@ -314,12 +314,11 @@
             // 
             pnlReserva.Controls.Add(guna2Panel1);
             pnlReserva.Controls.Add(lblReserva);
-            pnlReserva.CustomizableEdges = customizableEdges13;
-            pnlReserva.Dock = DockStyle.Fill;
-            pnlReserva.Location = new Point(0, 0);
+            pnlReserva.CustomizableEdges = customizableEdges27;
+            pnlReserva.Location = new Point(960, 0);
             pnlReserva.Name = "pnlReserva";
-            pnlReserva.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            pnlReserva.Size = new Size(1054, 854);
+            pnlReserva.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            pnlReserva.Size = new Size(94, 120);
             pnlReserva.TabIndex = 29;
             pnlReserva.Visible = false;
             // 
@@ -334,17 +333,17 @@
             guna2Panel1.Controls.Add(dtpDevolucao);
             guna2Panel1.Controls.Add(guna2HtmlLabel1);
             guna2Panel1.Controls.Add(lblNomeLivroReserva);
-            guna2Panel1.CustomizableEdges = customizableEdges11;
+            guna2Panel1.CustomizableEdges = customizableEdges25;
             guna2Panel1.Location = new Point(218, 253);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges26;
             guna2Panel1.Size = new Size(618, 348);
             guna2Panel1.TabIndex = 10;
             // 
             // btnFinalizarReserva
             // 
             btnFinalizarReserva.BorderRadius = 10;
-            btnFinalizarReserva.CustomizableEdges = customizableEdges5;
+            btnFinalizarReserva.CustomizableEdges = customizableEdges19;
             btnFinalizarReserva.DisabledState.BorderColor = Color.DarkGray;
             btnFinalizarReserva.DisabledState.CustomBorderColor = Color.DarkGray;
             btnFinalizarReserva.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -354,7 +353,7 @@
             btnFinalizarReserva.ForeColor = Color.White;
             btnFinalizarReserva.Location = new Point(215, 264);
             btnFinalizarReserva.Name = "btnFinalizarReserva";
-            btnFinalizarReserva.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnFinalizarReserva.ShadowDecoration.CustomizableEdges = customizableEdges20;
             btnFinalizarReserva.Size = new Size(189, 29);
             btnFinalizarReserva.TabIndex = 23;
             btnFinalizarReserva.Text = "Reservar";
@@ -365,7 +364,7 @@
             dtpReserva.BackColor = Color.White;
             dtpReserva.BorderRadius = 10;
             dtpReserva.Checked = true;
-            dtpReserva.CustomizableEdges = customizableEdges7;
+            dtpReserva.CustomizableEdges = customizableEdges21;
             dtpReserva.Enabled = false;
             dtpReserva.FillColor = Color.White;
             dtpReserva.Font = new Font("Segoe UI", 9F);
@@ -374,7 +373,7 @@
             dtpReserva.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpReserva.MinDate = new DateTime(2025, 7, 18, 0, 0, 0, 0);
             dtpReserva.Name = "dtpReserva";
-            dtpReserva.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            dtpReserva.ShadowDecoration.CustomizableEdges = customizableEdges22;
             dtpReserva.Size = new Size(324, 27);
             dtpReserva.TabIndex = 16;
             dtpReserva.Value = new DateTime(2025, 7, 18, 13, 44, 14, 0);
@@ -396,7 +395,7 @@
             dtpDevolucao.BackColor = Color.White;
             dtpDevolucao.BorderRadius = 10;
             dtpDevolucao.Checked = true;
-            dtpDevolucao.CustomizableEdges = customizableEdges9;
+            dtpDevolucao.CustomizableEdges = customizableEdges23;
             dtpDevolucao.FillColor = Color.White;
             dtpDevolucao.Font = new Font("Segoe UI", 9F);
             dtpDevolucao.Format = DateTimePickerFormat.Long;
@@ -404,7 +403,7 @@
             dtpDevolucao.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpDevolucao.MinDate = new DateTime(2025, 7, 18, 0, 0, 0, 0);
             dtpDevolucao.Name = "dtpDevolucao";
-            dtpDevolucao.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            dtpDevolucao.ShadowDecoration.CustomizableEdges = customizableEdges24;
             dtpDevolucao.Size = new Size(324, 27);
             dtpDevolucao.TabIndex = 16;
             dtpDevolucao.Value = new DateTime(2025, 7, 18, 13, 44, 14, 0);
@@ -455,7 +454,7 @@
             Controls.Add(lblValorDimensao);
             Controls.Add(lblDataPublicacao);
             Controls.Add(lblPublicacao);
-            Controls.Add(guna2HtmlLabel9);
+            Controls.Add(lblNomeGenero);
             Controls.Add(lblGenero);
             Controls.Add(lblDimensao);
             Controls.Add(lblNomeAutor);
@@ -499,7 +498,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblGenero;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblNomeGenero;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblPublicacao;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblDataPublicacao;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblValorDimensao;

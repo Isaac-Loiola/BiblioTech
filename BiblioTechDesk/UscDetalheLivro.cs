@@ -38,7 +38,7 @@ namespace BiblioTechDesk
             lblNomeEditora.Text = livro.Editora.Nome;
             lblNomeAutor.Text = livro.Autor.Nome;
             lblValorDimensao.Text = livro.Dimensao;
-            lblValorDimensao.Text = livro.Genero.Nome;
+            lblNomeGenero.Text = livro.Genero.Nome;
             lblDataPublicacao.Text = Convert.ToString(livro.DataPublicacao);
         }
 
