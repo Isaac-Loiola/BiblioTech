@@ -137,7 +137,7 @@ namespace BiblioTechClass
             var cmd = Banco.Abrir();
             cmd.CommandText = $"select * from usuarios where id = {id}";
             var dr = cmd.ExecuteReader();
-            if (dr.Read())
+            while (dr.Read())
             {
                 usuario = new
                     (
