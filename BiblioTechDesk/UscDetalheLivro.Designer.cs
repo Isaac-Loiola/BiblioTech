@@ -46,13 +46,12 @@
             lblNomeEditora = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblAutor = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblNomeAutor = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblDimensao = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblValorDimensao = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblDimensao = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblGenero = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblPublicacao = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblDataPublicacao = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblValorDimensao = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)picCapaLivro).BeginInit();
             SuspendLayout();
             // 
@@ -207,41 +206,17 @@
             lblNomeAutor.TabIndex = 26;
             lblNomeAutor.Text = "nome do autor";
             // 
-            // guna2HtmlLabel4
-            // 
-            guna2HtmlLabel4.BackColor = Color.Transparent;
-            guna2HtmlLabel4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            guna2HtmlLabel4.ForeColor = Color.Black;
-            guna2HtmlLabel4.IsSelectionEnabled = false;
-            guna2HtmlLabel4.Location = new Point(418, 708);
-            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(59, 23);
-            guna2HtmlLabel4.TabIndex = 26;
-            guna2HtmlLabel4.Text = "Editora: ";
-            // 
             // lblDimensao
             // 
-            this.lblDimensao.BackColor = Color.Transparent;
-            this.lblDimensao.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            this.lblDimensao.ForeColor = Color.Black;
-            this.lblDimensao.IsSelectionEnabled = false;
-            this.lblDimensao.Location = new Point(417, 708);
-            this.lblDimensao.Name = "lblDimensao";
-            this.lblDimensao.Size = new Size(87, 23);
-            this.lblDimensao.TabIndex = 26;
-            this.lblDimensao.Text = "Dimensões:";
-            // 
-            // lblValorDimensao
-            // 
-            this.lblValorDimensao.BackColor = Color.Transparent;
-            this.lblValorDimensao.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            this.lblValorDimensao.ForeColor = Color.FromArgb(69, 69, 69);
-            this.lblValorDimensao.IsSelectionEnabled = false;
-            this.lblValorDimensao.Location = new Point(510, 708);
-            this.lblValorDimensao.Name = "lblValorDimensao";
-            this.lblValorDimensao.Size = new Size(142, 23);
-            this.lblValorDimensao.TabIndex = 26;
-            this.lblValorDimensao.Text = "dimensões do livro";
+            lblDimensao.BackColor = Color.Transparent;
+            lblDimensao.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            lblDimensao.ForeColor = Color.Black;
+            lblDimensao.IsSelectionEnabled = false;
+            lblDimensao.Location = new Point(418, 708);
+            lblDimensao.Name = "lblDimensao";
+            lblDimensao.Size = new Size(79, 23);
+            lblDimensao.TabIndex = 26;
+            lblDimensao.Text = "Dimensão:";
             // 
             // lblGenero
             // 
@@ -291,18 +266,29 @@
             lblDataPublicacao.TabIndex = 26;
             lblDataPublicacao.Text = "data de publicação";
             // 
+            // lblValorDimensao
+            // 
+            lblValorDimensao.BackColor = Color.Transparent;
+            lblValorDimensao.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            lblValorDimensao.ForeColor = Color.FromArgb(69, 69, 69);
+            lblValorDimensao.IsSelectionEnabled = false;
+            lblValorDimensao.Location = new Point(503, 708);
+            lblValorDimensao.Name = "lblValorDimensao";
+            lblValorDimensao.Size = new Size(134, 23);
+            lblValorDimensao.TabIndex = 27;
+            lblValorDimensao.Text = "dimensão do livro";
+            // 
             // UscDetalheLivro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(lblValorDimensao);
             Controls.Add(lblDataPublicacao);
             Controls.Add(lblPublicacao);
             Controls.Add(guna2HtmlLabel9);
             Controls.Add(lblGenero);
-            Controls.Add(this.lblValorDimensao);
-            Controls.Add(this.lblDimensao);
-            Controls.Add(guna2HtmlLabel4);
+            Controls.Add(lblDimensao);
             Controls.Add(lblNomeAutor);
             Controls.Add(lblAutor);
             Controls.Add(lblNomeEditora);
@@ -335,7 +321,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNomeEditora;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblAutor;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNomeAutor;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblDimensao;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
@@ -343,5 +329,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblPublicacao;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblDataPublicacao;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblValorDimensao;
     }
 }
