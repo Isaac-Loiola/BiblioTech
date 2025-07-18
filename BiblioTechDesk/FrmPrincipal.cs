@@ -71,10 +71,6 @@ namespace BiblioTechDesk
         {
             UscReservar uscReservar = new();
             AssociarUserControla(uscReservar);
-            uscReservar.Load += (sender, e) =>
-            {
-
-            };
         }
     }
 }
