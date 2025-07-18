@@ -88,6 +88,7 @@ namespace BiblioTechDesk
             var usuario = Usuario.EfetuarLogin(txtEmail.Text, txtSenha.Text);
             if (usuario.Id > 0)
             {
+                Program.UsuarioLogado = usuario;
                 this.Hide();
                 FrmPrincipal frmPrincipal = new();
                 frmPrincipal.ShowDialog();

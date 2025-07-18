@@ -1,3 +1,5 @@
+using Guna.UI2.WinForms;
+
 namespace BiblioTechDesk
 {
     public partial class FrmPrincipal : Form
@@ -7,9 +9,19 @@ namespace BiblioTechDesk
             InitializeComponent();
         }
 
+        public void ExibirNotificacao(string nomeLivro)
+        {
+            Guna2MessageDialog mdConcluido = new();
+            mdConcluido.Style = MessageDialogStyle.Light;
+
+            mdConcluido.Parent = this;
+
+            mdConcluido.Show($"A reserva do livro {nomeLivro} foi concluída com sucesso, {Program.UsuarioLogado.Nome}!", "Tudo certo!");
+        }
+
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-
+            
         }
         public void AssociarUserControla(UserControl userControl)
         {
