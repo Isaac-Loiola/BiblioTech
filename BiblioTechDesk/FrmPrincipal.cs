@@ -32,7 +32,7 @@ namespace BiblioTechDesk
         }
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            
+
         }
         public void AssociarUserControla(UserControl userControl)
         {
@@ -71,6 +71,12 @@ namespace BiblioTechDesk
         {
             UscReservar uscReservar = new();
             AssociarUserControla(uscReservar);
+        }
+
+        private void btnMeusLivros_Click(object sender, EventArgs e)
+        {
+            UscLivrosUsuario uscLivrosUsuario = new();
+            AssociarUserControla(uscLivrosUsuario);
         }
     }
 }

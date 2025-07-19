@@ -264,6 +264,7 @@
             btnMeusLivros.TabIndex = 4;
             btnMeusLivros.Text = "Meus Livros";
             btnMeusLivros.TextAlign = HorizontalAlignment.Left;
+            btnMeusLivros.Click += btnMeusLivros_Click;
             // 
             // btnInicio
             // 
