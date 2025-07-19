@@ -204,5 +204,71 @@ namespace BiblioTechClass
 
             return livrosMaisAdquiridos;
         }
+
+       
+        public static List<Livro> ObterLivrosDoUsuario(int idUsuario)
+        {
+            List<Livro> livrosDoUsuario = new();
+
+            var cmd = Banco.Abrir();
+            cmd.CommandText = $"select l.id, l.nome, l.id_autor, l.id_editora, l.descricao, l.dimensao, l.id_genero, l.data_pub, l.imagem from livros l \r\ninner join reservas r on l.id = r.id_livro\r\ninner join usuarios u on  u.id = r.id_usuario\r\nwhere u.id = {idUsuario}";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                livrosDoUsuario.Add
+                    (
+                        new
+                        (
+                            dr.GetInt32(0),
+                            dr.GetString(1),
+                            Autor.ObterPorId(dr.GetInt32(2)),
+                            Editora.ObterPorId(dr.GetInt32(3)),
+                            dr.GetString(4),
+                            dr.GetString(5),
+                            Genero.ObterPorId(dr.GetInt32(6)),
+                            dr.GetDateTime(7),
+                            (byte[])dr.GetValue(8)
+                        )
+                    );
+
+            }
+            dr.Close();
+            cmd.Connection.Close();
+
+            return livrosDoUsuario;
+        }
+    
+
+        public static List<Livro> ObterLivrosEmAbertoDoUsuario(int idUsuario)
+        {
+            List<Livro> livrosDoUsuarioEmAberto = new();
+
+            var cmd = Banco.Abrir();
+            cmd.CommandText = $"select l.id, l.nome, l.id_autor, l.id_editora, l.descricao, l.dimensao, l.id_genero, l.data_pub, l.imagem from livros l \r\ninner join reservas r on l.id = r.id_livro\r\ninner join usuarios u on  u.id = r.id_usuario\r\nwhere u.id = {idUsuario} and r.status = 'aberto'";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                livrosDoUsuarioEmAberto.Add
+                    (
+                        new
+                        (
+                            dr.GetInt32(0),
+                            dr.GetString(1),
+                            Autor.ObterPorId(dr.GetInt32(2)),
+                            Editora.ObterPorId(dr.GetInt32(3)),
+                            dr.GetString(4),
+                            dr.GetString(5),
+                            Genero.ObterPorId(dr.GetInt32(6)),
+                            dr.GetDateTime(7),
+                            (byte[])dr.GetValue(8)
+                        )
+                    );
+
+            }
+            dr.Close();
+            cmd.Connection.Close();
+
+            return livrosDoUsuarioEmAberto;
+        }
     }
 }

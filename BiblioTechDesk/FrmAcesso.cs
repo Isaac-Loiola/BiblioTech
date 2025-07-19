@@ -49,6 +49,9 @@ namespace BiblioTechDesk
             {
                 Program.EnderecoUsuario.Usuario = Program.UsuarioLogado;
                 Program.EnderecoUsuario.Adicionar();
+
+                Log logEntradaUsuario = new(Program.UsuarioLogado, 1);
+                logEntradaUsuario.AdicionarLog();
             }
             else
             {
@@ -89,6 +92,9 @@ namespace BiblioTechDesk
             if (usuario.Id > 0)
             {
                 Program.UsuarioLogado = usuario;
+                Log logEntradaUsuario = new(Program.UsuarioLogado, 1);
+                logEntradaUsuario.AdicionarLog();
+
                 this.Hide();
                 FrmPrincipal frmPrincipal = new();
                 frmPrincipal.ShowDialog();

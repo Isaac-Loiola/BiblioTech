@@ -1,3 +1,4 @@
+using BiblioTechClass;
 using Guna.UI2.WinForms;
 
 namespace BiblioTechDesk
@@ -31,7 +32,7 @@ namespace BiblioTechDesk
         }
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            
+
         }
         public void AssociarUserControla(UserControl userControl)
         {
@@ -60,17 +61,22 @@ namespace BiblioTechDesk
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Log logSaida = new(Program.UsuarioLogado, 0);
+            logSaida.AdicionarLog();
+
+            Application.Exit();
         }
 
         private void btnReservar_Click(object sender, EventArgs e)
         {
             UscReservar uscReservar = new();
             AssociarUserControla(uscReservar);
-            uscReservar.Load += (sender, e) =>
-            {
+        }
 
-            };
+        private void btnMeusLivros_Click(object sender, EventArgs e)
+        {
+            UscLivrosUsuario uscLivrosUsuario = new();
+            AssociarUserControla(uscLivrosUsuario);
         }
     }
 }
