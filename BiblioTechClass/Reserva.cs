@@ -77,11 +77,11 @@ namespace BiblioTechClass
         /// </summary>
         /// <param name="id">id da Reserva</param>
         /// <returns>Objeto Reserva</returns>
-        public static Reserva ObterPorId(int id)
+        public static Reserva ObterPorId(int idLivro, int idUsuario)
         {
             Reserva reserva = new();
             var cmd = Banco.Abrir();
-            cmd.CommandText = $"select * from reservas where id = {id}";
+            cmd.CommandText = $"select * from reservas where id_usuario = {idUsuario} and id_livro = {idLivro} order by  data_reserva desc limit 1";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
