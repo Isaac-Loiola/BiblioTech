@@ -34,6 +34,8 @@ namespace BiblioTechDesk
             cmbGenero.DataSource = generos;
             cmbGenero.DisplayMember = "Nome";
             cmbGenero.ValueMember = "Id";
+
+            btnAdicionar.FillColor = Color.White;
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -52,7 +54,7 @@ namespace BiblioTechDesk
             picCapaDoLivro.Image.Save(ms, picCapaDoLivro.Image.RawFormat);
             imBytes = ms.ToArray();
 
-            if (txtNome.Text != string.Empty && txtDimensao.Text != string.Empty && txtDescricao.Text != string.Empty && 
+            if (txtNome.Text != string.Empty && txtDimensao.Text != string.Empty && txtDescricao.Text != string.Empty &&
                 cmbAutor.Text != string.Empty && cmbEditora.Text != string.Empty && cmbGenero.Text != string.Empty)
             {
                 Livro livro = new
@@ -77,6 +79,34 @@ namespace BiblioTechDesk
                 var frmprincipal = Application.OpenForms["FrmPrincipal"] as FrmPrincipal;
                 frmprincipal.ExibirNotificacaoCamposObrigatorios();
             }
+        }
+
+        private void btnReservas_Click(object sender, EventArgs e)
+        {
+            btnMenuAdicionar.FillColor = Color.FromArgb(247, 247, 247);
+            btnReservas.FillColor = Color.White;
+
+            pnlReservas.Visible = true;
+            var reservas = Reserva.ObterLista();
+            int contador = 0;
+
+            foreach(var reserva in reservas)
+            {
+                dgvReservas.Rows.Add();
+                dgvReservas.Rows[contador].Cells[0].Value = reserva.Id;
+                dgvReservas.Rows[contador].Cells[1].Value = reserva.Usuario.Id;
+                dgvReservas.Rows[contador].Cells[2].Value = reserva.Livro.Id;
+                dgvReservas.Rows[contador].Cells[3].Value = reserva.DataReserva.Date;
+                dgvReservas.Rows[contador].Cells[4].Value = reserva.DataDevolucao;
+                dgvReservas.Rows[contador].Cells[5].Value = reserva.Status;
+
+                contador++;
+            }
+        }
+
+        private void pnlReservas_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
