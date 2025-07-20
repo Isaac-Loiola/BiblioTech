@@ -111,17 +111,17 @@ namespace BiblioTechDesk
                 //pnlSituacaoDaDevolucao.Location = new Point(100, 259);
 
                 var reserva = Reserva.ObterPorId(livro.Id, Convert.ToInt32(Program.UsuarioLogado.Id));
-                var prazoMedio = DateTime.Today.AddDays(7);
 
-                var dataDevolucao = reserva.DataDevolucao;
-                
-                if(dataDevolucao >= DateTime.Today &&  dataDevolucao <= prazoMedio)
-                {
-                    pnlSituacaoDaDevolucao.FillColor = Color.FromArgb( 255,215 ,0);
-                }
-                else if(dataDevolucao == DateTime.Today || DateTime.Today > dataDevolucao)
+                var diasRestantes = (reserva.DataDevolucao - DateTime.Today).Days;
+
+                if(diasRestantes <= 3)
                 {
                     pnlSituacaoDaDevolucao.FillColor = Color.FromArgb(255, 69, 0);
+                }
+                else if(diasRestantes <= 7)
+                {
+                    pnlSituacaoDaDevolucao.FillColor = Color.FromArgb(255, 215, 0);
+
                 }
                 else
                 {
