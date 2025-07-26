@@ -14,7 +14,7 @@ namespace BiblioTechClass
         public Livro Livro { get; set; }
         public DateTime DataReserva { get; set; }
         public DateTime DataDevolucao { get; set; }
-        public string Status { get; set; }
+        public string? Status { get; set; }
         public Reserva()
         {
 
@@ -104,6 +104,7 @@ namespace BiblioTechClass
         public static List<Reserva> ObterLista()
         {
             List<Reserva> reservas = new();
+
             var cmd = Banco.Abrir();
             cmd.CommandText = $"select * from reservas";
             var dr = cmd.ExecuteReader();
@@ -121,9 +122,7 @@ namespace BiblioTechClass
                             dr.GetString(5)
                         )
                     );
-            }
-                   
-                    
+            }        
             dr.Close();
             cmd.Connection.Close();
 
