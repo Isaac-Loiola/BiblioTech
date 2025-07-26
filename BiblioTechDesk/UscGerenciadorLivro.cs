@@ -86,22 +86,10 @@ namespace BiblioTechDesk
             btnMenuAdicionar.FillColor = Color.FromArgb(247, 247, 247);
             btnReservas.FillColor = Color.White;
 
-            pnlReservas.Visible = true;
-            var reservas = Reserva.ObterLista();
-            int contador = 0;
+            var frmPrincipal = Application.OpenForms["FrmPrincipal"] as FrmPrincipal;
+            UscReservar uscReservar = new();
 
-            foreach(var reserva in reservas)
-            {
-                dgvReservas.Rows.Add();
-                dgvReservas.Rows[contador].Cells[0].Value = reserva.Id;
-                dgvReservas.Rows[contador].Cells[1].Value = reserva.Usuario.Id;
-                dgvReservas.Rows[contador].Cells[2].Value = reserva.Livro.Id;
-                dgvReservas.Rows[contador].Cells[3].Value = reserva.DataReserva.Date;
-                dgvReservas.Rows[contador].Cells[4].Value = reserva.DataDevolucao;
-                dgvReservas.Rows[contador].Cells[5].Value = reserva.Status;
-
-                contador++;
-            }
+            frmPrincipal!.AssociarUserControla(uscReservar);
         }
 
         private void pnlReservas_Paint(object sender, PaintEventArgs e)
