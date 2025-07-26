@@ -153,5 +153,34 @@ namespace BiblioTechClass
             cmd.Connection.Close();
             return usuario;
         }
+
+        /// <summary>
+        /// Método para buscar um objeto usuario pelo email cadastrado!
+        /// </summary>
+        /// <param name="email">email do usuario</param>
+        /// <returns>objeto Usuario</returns>
+        public static Usuario ObterPorEmail(string email)
+        {
+            Usuario usuario = new();
+
+            var cmd = Banco.Abrir();
+            cmd.CommandText = $"select * from usuarios where email = {email}";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                usuario = new
+                    (
+                          dr.GetInt32(0),
+                          dr.GetString(1),
+                          dr.GetString(2),
+                          dr.GetString(3),
+                          dr.GetDateTime(4),
+                          dr.GetInt32(5)
+                    );
+            }
+            dr.Close();
+            cmd.Connection.Close();
+            return usuario;
+        }
     }
 }

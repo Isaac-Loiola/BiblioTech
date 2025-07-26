@@ -121,7 +121,7 @@
   <data name="picCapaDoLivro.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAASwAAAFeCAYAAAA/lyK/AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAJXFJREFUeF7t3Xm8TVX/B3AhriEuJUOS4SIkUynhGiNzk54G0U+GnuTRiPv0JBKi
+        vQAADr0BR/uQrQAAJXFJREFUeF7t3Xm8TVX/B3AhriEuJUOS4SIkUynhGiNzk54G0U+GnuTRiPv0JBKi
         hIjMCpnJPCRSVM9DSqVwu+qnhGum1/Pv+r2+u9/e9lnfe8/ZZ5919lnrnM8f71evl33O2uuufdanPay9
         VoH//ve/AgDABAXkfwAA0BUCCwCMgcACAGMgsADAGAgsADAGAgsAjIHAAgBjILAAwBgILAAwBgILAIyB
         wAIAYyCwAMAYCCwAMAYCCwCMgcACAGMgsADAGAgsADAGAgsAjIHAAgBjILAAwBgILAAwBgILAIyBwAIA
@@ -286,20 +286,5 @@
   </data>
   <metadata name="ofdObterCapa.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
-  </metadata>
-  <metadata name="clnId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="cnlNomeUsuario.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clnDataDevolucao.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clnStatus.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clnDataReserva.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
   </metadata>
 </root>

@@ -48,6 +48,18 @@ namespace BiblioTechClass
             Imagem = imagem;
         }
 
+        public Livro(int id, string nome, Autor autor, Editora editora, string descricao, string dimensao, Genero genero, DateTime dataPublicacao)
+        {
+            Id = Id;
+            Nome = nome;
+            Autor = autor;
+            Editora = editora;
+            Descricao = descricao;
+            Dimensao = dimensao;
+            Genero = genero;
+            DataPublicacao = dataPublicacao;
+        }
+
         /// <summary>
         /// Método para adiconar um livro ao banco de dados!
         /// </summary>
@@ -95,6 +107,33 @@ namespace BiblioTechClass
                         Genero.ObterPorId(dr.GetInt32(6)),
                         dr.GetDateTime(7),
                         (byte[])dr.GetValue(8)
+                    );
+            }
+            dr.Close();
+            cmd.Connection.Close();
+
+            return livro;
+        }
+
+        public static Livro ObterPorNome(string nomeDoLivro)
+        {
+            Livro livro = new();
+
+            var cmd = Banco.Abrir();
+            cmd.CommandText = $"select id, nome, id_autor, id_editora, descricao, dimensao, id_genero, data_pub from livros where nome = {nomeDoLivro}";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                livro = new
+                    (
+                        dr.GetInt32(0),
+                        dr.GetString(1),
+                        Autor.ObterPorId(dr.GetInt32(2)),
+                        Editora.ObterPorId(dr.GetInt32(3)),
+                        dr.GetString(4),
+                        dr.GetString(5),
+                        Genero.ObterPorId(dr.GetInt32(6)),
+                        dr.GetDateTime(7)
                     );
             }
             dr.Close();
