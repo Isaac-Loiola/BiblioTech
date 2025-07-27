@@ -41,23 +41,38 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UscReservar));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lblReserva = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblSubtitulo = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            pnlFinalizarReserva = new Guna.UI2.WinForms.Guna2Panel();
+            pnlReservas = new Guna.UI2.WinForms.Guna2Panel();
             dgvResevas = new Guna.UI2.WinForms.Guna2DataGridView();
-            pnlMenu = new Guna.UI2.WinForms.Guna2Panel();
-            btnPenalidades = new Guna.UI2.WinForms.Guna2Button();
-            btnReservas = new Guna.UI2.WinForms.Guna2Button();
-            btnMenuAdicionar = new Guna.UI2.WinForms.Guna2Button();
             clnID = new DataGridViewTextBoxColumn();
             clnIdUsuario = new DataGridViewTextBoxColumn();
             clnIdLivro = new DataGridViewTextBoxColumn();
             clnDataReserva = new DataGridViewTextBoxColumn();
             clnDataDevolucao = new DataGridViewTextBoxColumn();
             clnStatus = new DataGridViewTextBoxColumn();
-            pnlFinalizarReserva.SuspendLayout();
+            pnlMenu = new Guna.UI2.WinForms.Guna2Panel();
+            btnPenalidades = new Guna.UI2.WinForms.Guna2Button();
+            btnReservas = new Guna.UI2.WinForms.Guna2Button();
+            btnMenuAdicionar = new Guna.UI2.WinForms.Guna2Button();
+            txtPesquisar = new Guna.UI2.WinForms.Guna2TextBox();
+            pnlFinalizarReserva = new Guna.UI2.WinForms.Guna2Panel();
+            picCapaLivro = new Guna.UI2.WinForms.Guna2PictureBox();
+            btnFinalizarReserva = new Guna.UI2.WinForms.Guna2Button();
+            pnlReservas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvResevas).BeginInit();
             pnlMenu.SuspendLayout();
+            pnlFinalizarReserva.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picCapaLivro).BeginInit();
             SuspendLayout();
             // 
             // lblReserva
@@ -84,16 +99,16 @@
             lblSubtitulo.TabIndex = 5;
             lblSubtitulo.Text = "Finalizar Reservas";
             // 
-            // pnlFinalizarReserva
+            // pnlReservas
             // 
-            pnlFinalizarReserva.BorderRadius = 10;
-            pnlFinalizarReserva.Controls.Add(dgvResevas);
-            pnlFinalizarReserva.CustomizableEdges = customizableEdges1;
-            pnlFinalizarReserva.Location = new Point(3, 170);
-            pnlFinalizarReserva.Name = "pnlFinalizarReserva";
-            pnlFinalizarReserva.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            pnlFinalizarReserva.Size = new Size(1025, 668);
-            pnlFinalizarReserva.TabIndex = 7;
+            pnlReservas.BorderRadius = 10;
+            pnlReservas.Controls.Add(dgvResevas);
+            pnlReservas.CustomizableEdges = customizableEdges1;
+            pnlReservas.Location = new Point(3, 170);
+            pnlReservas.Name = "pnlReservas";
+            pnlReservas.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            pnlReservas.Size = new Size(1025, 668);
+            pnlReservas.TabIndex = 7;
             // 
             // dgvResevas
             // 
@@ -124,7 +139,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvResevas.DefaultCellStyle = dataGridViewCellStyle3;
             dgvResevas.GridColor = Color.FromArgb(231, 229, 255);
-            dgvResevas.Location = new Point(3, 3);
+            dgvResevas.Location = new Point(3, 13);
             dgvResevas.Name = "dgvResevas";
             dgvResevas.ReadOnly = true;
             dgvResevas.RowHeadersVisible = false;
@@ -152,6 +167,54 @@
             dgvResevas.ThemeStyle.RowsStyle.Height = 35;
             dgvResevas.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvResevas.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvResevas.CellDoubleClick += dgvResevas_CellDoubleClick;
+            // 
+            // clnID
+            // 
+            clnID.HeaderText = "ID";
+            clnID.Name = "clnID";
+            clnID.ReadOnly = true;
+            clnID.Visible = false;
+            // 
+            // clnIdUsuario
+            // 
+            clnIdUsuario.FillWeight = 112.309647F;
+            clnIdUsuario.HeaderText = "Nome do Usuario";
+            clnIdUsuario.Name = "clnIdUsuario";
+            clnIdUsuario.ReadOnly = true;
+            clnIdUsuario.Width = 248;
+            // 
+            // clnIdLivro
+            // 
+            clnIdLivro.FillWeight = 112.309647F;
+            clnIdLivro.HeaderText = "Nome do Livro";
+            clnIdLivro.Name = "clnIdLivro";
+            clnIdLivro.ReadOnly = true;
+            clnIdLivro.Width = 250;
+            // 
+            // clnDataReserva
+            // 
+            clnDataReserva.FillWeight = 112.309647F;
+            clnDataReserva.HeaderText = "Data da Reserva";
+            clnDataReserva.Name = "clnDataReserva";
+            clnDataReserva.ReadOnly = true;
+            clnDataReserva.Width = 213;
+            // 
+            // clnDataDevolucao
+            // 
+            clnDataDevolucao.FillWeight = 112.309647F;
+            clnDataDevolucao.HeaderText = "Data de Devolução";
+            clnDataDevolucao.Name = "clnDataDevolucao";
+            clnDataDevolucao.ReadOnly = true;
+            clnDataDevolucao.Width = 213;
+            // 
+            // clnStatus
+            // 
+            clnStatus.FillWeight = 50.76142F;
+            clnStatus.HeaderText = "Status";
+            clnStatus.Name = "clnStatus";
+            clnStatus.ReadOnly = true;
+            clnStatus.Width = 95;
             // 
             // pnlMenu
             // 
@@ -227,68 +290,92 @@
             btnMenuAdicionar.TabIndex = 1;
             btnMenuAdicionar.Text = "Adicionar";
             // 
-            // clnID
+            // txtPesquisar
             // 
-            clnID.HeaderText = "ID";
-            clnID.Name = "clnID";
-            clnID.ReadOnly = true;
-            clnID.Visible = false;
+            txtPesquisar.BorderRadius = 10;
+            txtPesquisar.CustomizableEdges = customizableEdges11;
+            txtPesquisar.DefaultText = "";
+            txtPesquisar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtPesquisar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtPesquisar.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtPesquisar.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtPesquisar.FocusedState.BorderColor = Color.FromArgb(213, 218, 223);
+            txtPesquisar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtPesquisar.ForeColor = Color.FromArgb(130, 130, 130);
+            txtPesquisar.HoverState.BorderColor = Color.FromArgb(213, 218, 223);
+            txtPesquisar.IconLeft = (Image)resources.GetObject("txtPesquisar.IconLeft");
+            txtPesquisar.Location = new Point(3, 126);
+            txtPesquisar.Margin = new Padding(4);
+            txtPesquisar.Name = "txtPesquisar";
+            txtPesquisar.PlaceholderForeColor = Color.FromArgb(130, 130, 130);
+            txtPesquisar.PlaceholderText = "Pesquisar usuario";
+            txtPesquisar.SelectedText = "";
+            txtPesquisar.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            txtPesquisar.Size = new Size(373, 37);
+            txtPesquisar.TabIndex = 17;
             // 
-            // clnIdUsuario
+            // pnlFinalizarReserva
             // 
-            clnIdUsuario.FillWeight = 112.309647F;
-            clnIdUsuario.HeaderText = "Nome do Usuario";
-            clnIdUsuario.Name = "clnIdUsuario";
-            clnIdUsuario.ReadOnly = true;
-            clnIdUsuario.Width = 248;
+            pnlFinalizarReserva.Controls.Add(btnFinalizarReserva);
+            pnlFinalizarReserva.Controls.Add(picCapaLivro);
+            pnlFinalizarReserva.CustomizableEdges = customizableEdges17;
+            pnlFinalizarReserva.Location = new Point(3, 122);
+            pnlFinalizarReserva.Name = "pnlFinalizarReserva";
+            pnlFinalizarReserva.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            pnlFinalizarReserva.Size = new Size(1025, 723);
+            pnlFinalizarReserva.TabIndex = 18;
             // 
-            // clnIdLivro
+            // picCapaLivro
             // 
-            clnIdLivro.FillWeight = 112.309647F;
-            clnIdLivro.HeaderText = "Nome do Livro";
-            clnIdLivro.Name = "clnIdLivro";
-            clnIdLivro.ReadOnly = true;
-            clnIdLivro.Width = 250;
+            picCapaLivro.BorderRadius = 10;
+            picCapaLivro.CustomizableEdges = customizableEdges15;
+            picCapaLivro.Image = (Image)resources.GetObject("picCapaLivro.Image");
+            picCapaLivro.ImageRotate = 0F;
+            picCapaLivro.Location = new Point(3, 151);
+            picCapaLivro.Name = "picCapaLivro";
+            picCapaLivro.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            picCapaLivro.Size = new Size(274, 415);
+            picCapaLivro.SizeMode = PictureBoxSizeMode.StretchImage;
+            picCapaLivro.TabIndex = 1;
+            picCapaLivro.TabStop = false;
             // 
-            // clnDataReserva
+            // btnFinalizarReserva
             // 
-            clnDataReserva.FillWeight = 112.309647F;
-            clnDataReserva.HeaderText = "Data da Reserva";
-            clnDataReserva.Name = "clnDataReserva";
-            clnDataReserva.ReadOnly = true;
-            clnDataReserva.Width = 213;
-            // 
-            // clnDataDevolucao
-            // 
-            clnDataDevolucao.FillWeight = 112.309647F;
-            clnDataDevolucao.HeaderText = "Data de Devolução";
-            clnDataDevolucao.Name = "clnDataDevolucao";
-            clnDataDevolucao.ReadOnly = true;
-            clnDataDevolucao.Width = 213;
-            // 
-            // clnStatus
-            // 
-            clnStatus.FillWeight = 50.76142F;
-            clnStatus.HeaderText = "Status";
-            clnStatus.Name = "clnStatus";
-            clnStatus.ReadOnly = true;
-            clnStatus.Width = 95;
+            btnFinalizarReserva.BorderRadius = 10;
+            btnFinalizarReserva.CustomizableEdges = customizableEdges13;
+            btnFinalizarReserva.DisabledState.BorderColor = Color.DarkGray;
+            btnFinalizarReserva.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnFinalizarReserva.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnFinalizarReserva.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnFinalizarReserva.FillColor = Color.Black;
+            btnFinalizarReserva.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            btnFinalizarReserva.ForeColor = Color.White;
+            btnFinalizarReserva.Location = new Point(418, 644);
+            btnFinalizarReserva.Name = "btnFinalizarReserva";
+            btnFinalizarReserva.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnFinalizarReserva.Size = new Size(189, 29);
+            btnFinalizarReserva.TabIndex = 24;
+            btnFinalizarReserva.Text = "Finalizar";
             // 
             // UscReservar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            Controls.Add(pnlMenu);
             Controls.Add(pnlFinalizarReserva);
+            Controls.Add(txtPesquisar);
+            Controls.Add(pnlMenu);
+            Controls.Add(pnlReservas);
             Controls.Add(lblReserva);
             Controls.Add(lblSubtitulo);
             Name = "UscReservar";
             Size = new Size(1054, 854);
             Load += UscReservar_Load;
-            pnlFinalizarReserva.ResumeLayout(false);
+            pnlReservas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvResevas).EndInit();
             pnlMenu.ResumeLayout(false);
+            pnlFinalizarReserva.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picCapaLivro).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -297,7 +384,7 @@
 
         private Guna.UI2.WinForms.Guna2HtmlLabel lblReserva;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblSubtitulo;
-        private Guna.UI2.WinForms.Guna2Panel pnlFinalizarReserva;
+        private Guna.UI2.WinForms.Guna2Panel pnlReservas;
         private Guna.UI2.WinForms.Guna2DataGridView dgvResevas;
         private Guna.UI2.WinForms.Guna2Panel pnlMenu;
         private Guna.UI2.WinForms.Guna2Button btnPenalidades;
@@ -309,5 +396,9 @@
         private DataGridViewTextBoxColumn clnDataReserva;
         private DataGridViewTextBoxColumn clnDataDevolucao;
         private DataGridViewTextBoxColumn clnStatus;
+        private Guna.UI2.WinForms.Guna2TextBox txtPesquisar;
+        private Guna.UI2.WinForms.Guna2Panel pnlFinalizarReserva;
+        private Guna.UI2.WinForms.Guna2PictureBox picCapaLivro;
+        private Guna.UI2.WinForms.Guna2Button btnFinalizarReserva;
     }
 }

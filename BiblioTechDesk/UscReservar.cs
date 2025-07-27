@@ -19,7 +19,7 @@ namespace BiblioTechDesk
         {
             InitializeComponent();
         }
-        
+
         private void ExibirDetalhesDoLivro(int idLivro)
         {
             UscDetalheLivro.idDoLivro = idLivro;
@@ -37,7 +37,7 @@ namespace BiblioTechDesk
 
             int linha = 0;
             dgvResevas.Rows.Clear();
-            foreach(var reserva in reservas)
+            foreach (var reserva in reservas)
             {
                 dgvResevas.Rows.Add();
                 dgvResevas.Rows[linha].Cells[0].Value = reserva.Id;
@@ -49,6 +49,11 @@ namespace BiblioTechDesk
 
                 linha++;
             }
+        }
+
+        private void dgvResevas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var linha = dgvResevas.SelectedRows;
         }
     }
 }
