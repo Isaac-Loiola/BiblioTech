@@ -53,7 +53,10 @@ namespace BiblioTechDesk
 
         private void dgvResevas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var linha = dgvResevas.SelectedRows;
+            int linha = dgvResevas.CurrentRow.Index!;
+            int idReserva = Convert.ToInt32(dgvResevas.Rows[linha].Cells[0].Value);
+
+            var reserva = Reserva.ObterPorId()
         }
     }
 }
