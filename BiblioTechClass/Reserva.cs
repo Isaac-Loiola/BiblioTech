@@ -101,6 +101,30 @@ namespace BiblioTechClass
             return reserva;
         }
 
+        public static Reserva ObterPorIdReserva(int idReserva)
+        {
+            Reserva reserva = new();
+            var cmd = Banco.Abrir();
+            cmd.CommandText = $"select * from reservas where id = {idReserva}";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                reserva = new
+                    (
+                        dr.GetInt32(0),
+                        Usuario.ObterPorId(dr.GetInt32(1)),
+                        Livro.ObterPorId(dr.GetInt32(2)),
+                        dr.GetDateTime(3),
+                        dr.GetDateTime(4),
+                        dr.GetString(5)
+                    );
+            }
+            dr.Close();
+            cmd.Connection.Close();
+
+            return reserva;
+        }
+
         public static List<Reserva> ObterLista()
         {
             List<Reserva> reservas = new();

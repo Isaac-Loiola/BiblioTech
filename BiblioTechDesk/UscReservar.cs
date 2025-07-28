@@ -19,7 +19,7 @@ namespace BiblioTechDesk
         {
             InitializeComponent();
         }
-        
+
         private void ExibirDetalhesDoLivro(int idLivro)
         {
             UscDetalheLivro.idDoLivro = idLivro;
@@ -37,7 +37,7 @@ namespace BiblioTechDesk
 
             int linha = 0;
             dgvResevas.Rows.Clear();
-            foreach(var reserva in reservas)
+            foreach (var reserva in reservas)
             {
                 dgvResevas.Rows.Add();
                 dgvResevas.Rows[linha].Cells[0].Value = reserva.Id;
@@ -49,6 +49,39 @@ namespace BiblioTechDesk
 
                 linha++;
             }
+        }
+        private Reserva reservaAtributo;
+        private void dgvResevas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            pnlFinalizarReserva.Visible = true;
+
+            int linha = dgvResevas.CurrentRow.Index!;
+            int idReserva = Convert.ToInt32(dgvResevas.Rows[linha].Cells[0].Value);
+
+            var reserva = Reserva.ObterPorIdReserva(idReserva);
+            var livro = reserva.Livro;
+            var usuario = reserva.Usuario;
+
+            reservaAtributo = reserva;
+
+            lblNomeUsuario.Text = usuario.Nome;
+            lblEmailUsuario.Text = usuario.Email;
+
+            using (MemoryStream ms = new(livro.Imagem))
+            {
+                picCapaLivro.Image = Image.FromStream(ms);
+            }
+
+            lblNomeLivroSobre.Text = livro.Nome;
+            lblGeneroLivro.Text = livro.Genero.Nome;
+
+            dtpDevolucao.Value = reserva.DataDevolucao;
+            dtpReserva.Value = reserva.DataReserva;
+        }
+
+        private void btnFinalizarReserva_Click(object sender, EventArgs e)
+        {
+            reservaAtributo.Finalizar();
         }
     }
 }
